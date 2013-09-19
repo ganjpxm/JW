@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:oxm="http://www.springframework.org/schema/oxm"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd"
+       default-autowire="byName">
+
+	<!-- The controllers are autodetected POJOs labeled with the @Controller annotation. -->
+	<context:component-scan base-package="org.ganjp.jpw.**.controller" />
+
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:order="100" p:viewClass="org.springframework.web.servlet.view.JstlView"
+		p:prefix="/pages/" p:suffix=".jsp" />
+		
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<mvc:annotation-driven conversion-service="conversionService" />
+	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<bean class="org.ganjp.jpw.tm.model.TmTypeConverter" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- internationalized resource -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>i18n/messages</value>
+				<!-- Add message config here -->				
+			</list>
+		</property>
+	</bean>
+	
+	<!--  
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"
+		p:messageConverters-ref="messageConverters">
+		<property name="webBindingInitializer">
+			<bean class="org.ganjp.jpw.core.web.controller.JpBindingInitializer" />
+		</property>
+	</bean>
+	<util:list id="messageConverters">
+		<bean class="org.springframework.http.converter.BufferedImageHttpMessageConverter" />
+		<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+		<bean class="org.springframework.http.converter.StringHttpMessageConverter" />
+		<bean class="org.springframework.http.converter.xml.XmlAwareFormHttpMessageConverter" />
+		<bean class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter"
+			p:marshaller-ref="xmlMarshaller" p:unmarshaller-ref="xmlMarshaller">
+		</bean>
+		<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+	</util:list>
+	-->
+	
+	<!-- FreeMarker base set and view resolve configuration 	
+    <bean id="freemarkerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer"
+		p:templateLoaderPath="/template/ftl">
+		<property name="freemarkerSettings">
+			<props>
+				<prop key="defaultEncoding">UTF-8</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="freeMarkerResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver"
+		p:order="5" p:suffix=".ftl" p:contentType="text/html; charset=utf-8" />
+		
+    <bean id="velocityConfigurer" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer"
+       	p:resourceLoaderPath="/template/vm" > 
+		<property name="velocityProperties"> 
+      		<props> 
+        		<prop key="directive.foreach.counter.name">loopCounter</prop> 
+        		<prop key="directive.foreach.counter.initial.value">0</prop>
+        		<prop key="input.encoding">UTF-8</prop>
+        		<prop key="output.encoding">UTF-8</prop>
+        		<prop key="contentType">text/html;charset=UTF-8</prop> 
+      		</props> 
+    	</property> 
+    </bean> 
+    <bean id="velocityResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver"
+    	p:order="4" p:suffix=".vm" p:contentType="text/html; charset=utf-8"/>
+    -->	
+    <!-- Excel and PDF view resolve configuration 
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="10" />
+	<bean id="tmTypeExcel" class="org.ganjp.jpw.tm.view.TmTypeExcelView" />
+	<bean id="tmTypeListPdf" class="org.ganjp.jpw.tm.view.TmTypePdfView" />
+	-->
+	
+	<!-- XMl and JSON view resolve configuration 
+	<bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" 
+		p:renderedAttributes="jsons1" />
+	<bean id="marshallingView" class="org.springframework.web.servlet.view.xml.MarshallingView"
+		p:modelKey="xmls1" p:marshaller-ref="xmlMarshaller" />
+	-->
+	
+	<!-- XML file or i18n resource define view eg: location(classpath:views.xml), p:basename="views"-->
+	<bean class="org.springframework.web.servlet.view.XmlViewResolver"
+		p:order="20" p:location="/WEB-INF/jp-views.xml" />
+	<bean class="org.springframework.web.servlet.view.ResourceBundleViewResolver"
+		p:order="30" p:basename="i18n/views" />
+			
+	<!-- multiple view resolve configuration p:defaultContentType="text/html"-->	
+	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver"
+		p:order="0" p:ignoreAcceptHeader="true" p:favorPathExtension="false"
+		p:favorParameter="true" p:parameterName="format">
+	  	<property name="mediaTypes">
+			<map>
+				<entry key="html" value="text/html" />
+				<entry key="xml" value="application/xml" />
+				<entry key="json" value="application/json" />
+			</map>
+		</property>
+	  	<property name="defaultViews">
+			<list>
+				<bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" p:renderedAttributes="key" />
+				<bean class="org.springframework.web.servlet.view.xml.MarshallingView" p:modelKey="key" p:marshaller-ref="xmlMarshaller" />
+			</list>
+		</property>
+	</bean>
+	<bean id="xmlMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
+		<property name="streamDriver">
+			<bean class="com.thoughtworks.xstream.io.xml.StaxDriver" />
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>org.ganjp.jpw.tm.model.TmType</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Save a locale change using a cookie 
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver"
+	   	p:cookieName="clientLanguage" p:cookieMaxAge="100000" p:cookiePath="/" p:defaultLocale="zh_CN"/>
+	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
+	</mvc:interceptors>   
+	-->
+	
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="org.ganjp.jpw.core.web.controller.JpInteceptor" />			
+		</mvc:interceptor>
+	</mvc:interceptors>
+	   
+	<!-- File Upload 
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		p:defaultEncoding="UTF-8" p:maxUploadSize="5242880" p:uploadTempDir="upload/temp"/>
+	-->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- one of the properties available; the maximum file size in bytes -->
+        <property name="maxUploadSize" value="100000000"/>
+    </bean>		
+	<!-- Static resource mapping 
+	<mvc:default-servlet-handler/> 
+	<bean id="rpe" class="org.ganjp.jpw.core.web.controller.ResourcePathExposer" init-method="init"/>
+    <mvc:resources mapping="#{rpe.resourceRoot}/**" location="/" cache-period="31536000"/>
+    -->
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory 31536000-->
+	<mvc:resources mapping="/resources/**" location="/resources/"  cache-period="1000"/>
+    
+</beans>
