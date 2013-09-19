@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="middlegen" default="all" basedir=".">
+    
+	<path id="lib.path">
+		<fileset dir="resources">
+			<include name="**/*.jar"/>
+		</fileset>    	
+	</path>
+	
+	<property name="hibernate.cascade" value="all"/>
+    <property name="gen.xdoclet-tag" value="false"/>
+    <property name="middlegen.gui" value="false"/>
+    <property name="hibernate.id.generator" value="uuid"/>
+	<pckpath packagename="${full.package}" pathProperty="package.path" />
+	<property name="class.path" value="${src}/${package.path}" />
+	
+    <target name="init">
+    	<delete file="${class.path}/${class.name}.hbm.xml.format"/>
+        <available property="xdoclet1.2+" classname="xdoclet.modules.hibernate.HibernateDocletTask" classpathref="lib.path"/>
+    </target>
+    
+    <target name="fail-if-no-xdoclet-1.2" unless="xdoclet1.2+">
+        <fail>You must download several jar files before you can build Middlegen.</fail>
+    </target>
+
+    <target name="fail-if-no-table-name" unless="table.name">
+        <input message="Database table?" addproperty="table.name"/>
+        <fail unless="table.name">
+            Table name not set. Please specify table.name property.
+        </fail>
+    </target>
+
+	<!-- fgenerate hbm file-->
+    <target name="middlegen" unless="middlegen.skip" depends="init,fail-if-no-xdoclet-1.2,fail-if-no-table-name">
+        <mkdir dir="${class.path}"/>
+        <taskdef name="middlegen" classname="middlegen.MiddlegenTask" classpathref="lib.path"/>
+        <middlegen
+            appname="${full.package}"
+            prefsdir="${src}"
+            gui="${middlegen.gui}"
+            databaseurl="${database.url}"
+            driver="${database.driver_class}"
+            username="${database.username}"
+            password="${database.password}"
+            schema="${database.schema}"
+        	includeViews="false">
+            <hibernate
+                destination="${src}"
+                package="${full.package}"
+                genXDocletTags="${gen.xdoclet-tag}"
+                standardCascade="${hibernate.cascade}"
+                standardGeneratorScheme="${hibernate.id.generator}"
+                javaTypeMapper="middlegen.plugins.hibernate.HibernateJavaTypeMapper"/>
+            <table name="${table.name}" singular="${class.name}" plural="${full.package}"/>
+        </middlegen>
+    </target>
+	
+	<!-- Format Hibernate mapping file-->
+	<target name="hbm-format" depends="middlegen" >
+		<xslt force="true" basedir="${class.path}" includes="${class.name}.hbm.xml" destdir="${class.path}" style="resources/template/xslt/hibernate-format.xslt">
+			<outputproperty name="indent" value="yes"/>
+			<xmlcatalog>
+				<dtd publicId="-//Hibernate/Hibernate Mapping DTD 3.0//EN" location="resources/template/xslt/hibernate-mapping-3.0.dtd" />
+			</xmlcatalog>
+			<mapper type="glob" from="${class.name}.hbm.xml" to="${class.name}.hbm.xml.format"/>
+		</xslt>
+		<move todir="${class.path}">
+			<fileset dir="${class.path}">
+				<include name="${class.name}.hbm.xml.format"/>
+			</fileset>
+			<mapper type="glob" to="${class.name}.hbm.xml" from="${class.name}.hbm.xml.format"/>
+		</move>
+		<delete file="${class.path}/${class.name}.hbm.xml.format"/>
+		<delete><fileset dir="${src}" includes="*-prefs.properties"/></delete>
+	</target>
+	
+	<!-- Build and install everything -->
+    <target name="all" depends="middlegen,hbm-format">
+    	<echo>gen hbm success</echo>
+    </target>
+	
+</project>

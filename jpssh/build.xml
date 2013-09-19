@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="jpssh" default="compile" basedir="." xmlns:artifact="urn:maven-artifact-ant" >
+	<!-- ****************************** define property ****************************** -->
+	<property environment="env"/>
+	<property name="dist" value="dist" />
+	<property name="web" value="web" />
+	<property name="weblib" value="${web}/WEB-INF/lib" />
+	<property name="src" value="src/main/java" />
+	<property name="resouce" value="src/main/resources" />
+	<property name="classes" value="${web}/WEB-INF/classes" />
+	<property name="compress.dir" value="${dist}/compress" />
+    <property name="xdoclet.force" value="false"/><!-- Default options for code-generation, compiling -->
+	<property name="project.name" value="jpw" />
+	<property name="project.version" value="1.0.3" />
+	<property name="project.copyright" value="Copyright (c) 2012-2013 Gan Jianping. All rights reserved" />
+	<property name="project.author" value="ganjianping" />
+	<property name="project.aboutus" value="http://www.ganjianping.com" />
+	<property name="project.contatus" value="Email:ganjpxm@gmail.com" />
+	<property name="project.package.type" value="jar" />
+	<property name="project.encoding" value="UTF-8" />
+	<property name="pagecompressor" value="resources/jar/ant/pagecompressor-0.1.jar" />
+	
+	<!-- ****************************** define path ****************************** -->
+	<path id="lib.path">
+		<fileset dir="resources/jar">
+			<include name="**/*.jar"/>
+		</fileset>    	
+		<fileset dir="${web}/WEB-INF/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	<path id="compress.path">
+		<pathelement location="${compress.dir}" />
+	</path>
+	
+	<!-- ****************************** define task ****************************** -->
+	<target name="init">
+		<mkdir dir="${dist}" />
+		<mkdir dir="${classes}" />
+		<tstamp>
+			<format property="buildTime" pattern="yyyyMMdd" locale="zh_cn" />
+			<format property="pulishTime" pattern="yyyyMMdd" locale="zh_cn" />
+		</tstamp>
+		<property name="project.war" value="${project.name}-${project.version}-B${pulishTime}.war"/>
+		<property name="project.zip" value="${project.name}-${project.version}-B${pulishTime}.zip"/>
+	</target>
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="lib.path"/>
+	<!--
+	<target name="taskdef">
+		<taskdef name="replacetext" classname="org.ganjp.core.task.ReplaceTextTask" classpathref="lib.path" />
+	</target>	
+	-->
+	
+	<!-- ********************************************* package ******************************* -->
+    <target name="compile" depends="init" description="compile without cleaning">
+    	<javac srcdir="${src}"
+            destdir="${classes}" 
+			debug="true"
+			deprecation="false" 
+			optimize="false"
+			source="1.4"
+			target="1.4"
+        	encoding="${project.encoding}"
+            classpathref="lib.path"
+    		includeantruntime="ture">
+		</javac>
+    	<copy todir="${classes}">
+			<fileset dir="${resouce}">
+				<include name="**/*.properties"/>
+				<include name="**/*.xml"/>
+				<exclude name="**/*_zh_CN.properties"/>
+			</fileset>
+		</copy>
+		<native2ascii src="${src}" dest="${classes}" encoding="${project.encoding}">
+			<include name="*_zh_CN.properties"/>
+		</native2ascii>
+    </target>
+	<!-- package project jar file -->
+	<target name="package-jar" depends="compile" >
+		<jar destfile="${dist}/${project.name}.jar">
+			<manifest>
+				<attribute name="Class-Path" value="${project.name}.jar" />
+				<attribute name="Implementation-Title" value="${project.name}"/>
+				<attribute name="Implementation-Version" value="${project.version}"/>
+			</manifest>
+			<fileset dir="${classes}" />
+		</jar>
+	</target>
+    <target name="jptask.jar" depends="compile" description="create ganjp task jar package">
+		<jar compress="true" destfile="resources/jar/ant/jptask.jar">
+			<fileset dir="${classes}">
+				<include name="org/ganjp/extend/ant/**/*.class" />
+				<include name="org/ganjp/extend/xml/**/*.class" />
+				<include name="org/ganjp/core/util/*.class" />
+				<include name="org/ganjp/core/exception/*.class" />
+				<!--exclude name="*.tmp"/-->
+			</fileset>
+			<manifest>
+				<attribute name="Built-By" value="${project.author}" />
+				<attribute name="Product-Tile" value="${project.name}-${project.version}.jar" />
+				<attribute name="Product-Version" value="${project.version}" />
+				<attribute name="Build-Time" value="${pulishTime}" />
+				<attribute name="Product-Vendor" value="${project.copyright}" />
+				<attribute name="Specification-Title" value="${project.name}" />
+				<attribute name="Specification-Version" value="${project.version}" />
+				<attribute name="Specification-Vendor" value="${project.copyright}" />
+				<attribute name="Implementation-Version" value="${pulishTime}" />
+				<attribute name="Implementation-Title" value="${project.name}" />
+				<attribute name="Implementation-Vendor" value="${project.author}" />
+			</manifest>
+		</jar>
+    </target>
+	<!-- generate css,js compress file -->
+	<target name="gzip">
+		<delete dir="${compress.dir}"/>
+		<mkdir dir="${compress.dir}" />
+		<copy todir="${compress.dir}" overwrite="true">
+			<fileset dir="${web}">
+				<include name="resources/js/**/*.js" />
+				<include name="resources/style/**/*.css" />
+			</fileset>
+		</copy>
+		<exec executable="java">
+			<arg line="-jar" />
+			<arg path="${pagecompressor}" />
+			<arg line="--charset utf-8" />
+			<arg line="--gzip" />
+			<arg line="--css" />
+			<arg line="--js" />
+			<arg pathref="compress.path" />
+		</exec>
+		<copy todir="${web}" overwrite="true">
+			<fileset dir="${compress.dir}">
+				<include name="**/*.gzjs" />
+				<include name="**/*.gzcss" />
+			</fileset>
+		</copy>
+		<delete dir="${compress.dir}"/>
+	</target>
+			
+	<target name="clearGzip">
+		<delete>
+			<fileset dir="${web}">
+				<include name="resources/js/**/*.gzjs" />
+				<include name="resources/style/**/*.gzcss" />
+			</fileset>
+		</delete>
+	</target>
+	
+	<!-- package project war file -->
+	<target name="package-war" depends="package-jar" description="Package WAR">
+		<!-- webapp.war -->
+		<war destfile="${dist}/${project.war}" duplicate="fail" webxml="${web}/WEB-INF/web.xml" compress="true">
+			<fileset dir="${web}">
+				<exclude name="WEB-INF/classes/template/**"/>
+				<exclude name="WEB-INF/classes/**/test-*"/>
+		      	<exclude name="template/**"/>
+		      	<exclude name="resources/upload/**"/>
+				
+		        <exclude name="**/web.xml"/>  
+		        <exclude name="**/*.EXAMPLE"/>  
+		        <exclude name="**/*.README"/>
+			</fileset>
+			<fileset dir="." file="*.txt"/>
+		</war>
+	</target>
+		
+	<target name="javadoc" depends="init">
+		<delete dir="${dist}/javadoc" />
+		<mkdir dir="${dist}/javadoc" />
+		<javadoc destdir="${dist}/javadoc" sourcepath="${src}" charset="${project.encoding}" encoding="${project.encoding}" 
+			author="true" version="true" use="true" splitindex="true" windowtitle="${project.name} ${project.version} API Documentation">
+			<classpath refid="lib.path" />
+			<doctitle>
+				<![CDATA[ <h1> jpw SDK APIs(V ${project.version})</h1> ]]> 
+            </doctitle>
+			<bottom>
+				<![CDATA[ <div algin="center">Copyright &#169; 2011 the original author or authors, All Rights Reserved.</div>]]> 
+		    </bottom>
+		</javadoc>
+	</target>
+	   
+	<target name="xdoclet-tag" depends="init" unless="xdoclet-tag.unnecessary" description="Generate .tld and validation.xml">
+		<taskdef name="xdoclet-web" classname="xdoclet.modules.web.WebDocletTask" classpathref="lib.path"/>
+		<xdoclet-web destdir="${web}/WEB-INF" force="${xdoclet.force}"
+            mergedir="metadata/web" excludedtags="@version,@author" verbose="true">
+			<fileset dir="${src}">
+				<include name="**/*Tag.java"/>
+			</fileset>
+			<jsptaglib validateXML="true" templateFile="resources/template/taglib/taglib_tld.xdt"
+                description="Custom tag library for this application"
+                shortName="${project.name}" filename="${project.name}.tld" destDir="${web}/WEB-INF/tld"/>
+		</xdoclet-web>
+	</target>
+
+  
+  <get src="http://search.maven.org/remotecontent?filepath=org/apache/maven/maven-ant-tasks/2.1.3/maven-ant-tasks-2.1.3.jar" dest="maven-ant-tasks.jar"/>
+  <target name="initmvn">
+    <path id="maven-ant-tasks.classpath" path="maven-ant-tasks.jar"/>
+    <typedef resource="org/apache/maven/artifact/ant/antlib.xml" uri="urn:maven-artifact-ant" classpathref="maven-ant-tasks.classpath"/>
+  </target>
+  
+  <target name="sync-jcloud-lib" depends="initmvn">
+    <delete dir="resources/jar/jcloud" />
+    <mkdir dir="resources/jar/jcloud" />
+    <artifact:dependencies filesetId="jclouds.fileset" versionsId="dependency.versions">
+      <dependency groupId="org.jclouds" artifactId="jclouds-all" version="1.6.0" />
+      <dependency groupId="org.jclouds.driver" artifactId="jclouds-sshj" version="1.6.0" />
+      <dependency groupId="ch.qos.logback" artifactId="logback-classic" version="[1.0.9,)" />
+    </artifact:dependencies>
+    <copy todir="resources/jar/jcloud" verbose="true">
+      <fileset refid="jclouds.fileset"/>
+      <mapper type="flatten" />
+    </copy>
+  </target>
+  
+</project>
