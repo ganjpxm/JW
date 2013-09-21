@@ -1,0 +1,19 @@
+<html>
+<head>
+  <title>Test Velocity</title>
+</head>
+<body>
+  <table>
+  	<tr>
+	  <td>String</td>
+	  <td>Date</td>    
+	</tr>
+    #foreach( $tmType in $tmTypes )
+	<tr>
+	  <td>${tmType.strType}</td>
+	  <td>${tmType.dateType}</td>    
+	</tr>
+    #end       
+  <table>
+</body>
+<html>
