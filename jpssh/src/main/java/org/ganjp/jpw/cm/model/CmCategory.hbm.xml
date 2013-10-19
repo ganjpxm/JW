@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="org.ganjp.jpw.cm.model.CmCategory" table="cm_category">
+<id name="categoryId" column="category_id" type="java.lang.String" unsaved-value="">
+<generator class="uuid"/>
+</id>
+<property name="categoryPid" type="java.lang.String" column="category_pid"/>
+<property name="categoryName" type="java.lang.String" column="category_name"/>
+<property name="categoryType" type="java.lang.String" column="category_type"/>
+<property name="categoryTypeId" type="java.lang.String" column="category_type_id"/>
+<property name="endFlag" type="java.lang.String" column="end_flag"/>
+<property name="operatorId" type="java.lang.String" column="operator_id"/>
+<property name="operatorName" type="java.lang.String" column="operator_name"/>
+<property name="createDateTime" type="java.sql.Timestamp" column="create_date_time"/>
+<property name="modifyTimestamp" type="java.sql.Timestamp" column="modify_timestamp"/>
+<property name="dataState" type="java.lang.String" column="data_state"/>
+</class>
+</hibernate-mapping>

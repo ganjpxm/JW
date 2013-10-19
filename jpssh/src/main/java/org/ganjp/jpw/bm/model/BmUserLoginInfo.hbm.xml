@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="org.ganjp.jpw.bm.model.BmUserLoginInfo" table="bm_user_login_info">
+<id name="userLoginInfoId" column="user_login_info_id" type="java.lang.String" unsaved-value="">
+<generator class="uuid"/>
+</id>
+<property name="loginUserId" type="java.lang.String" column="login_user_id"/>
+<property name="loginUserName" type="java.lang.String" column="login_user_name"/>
+<property name="loginTime" type="java.sql.Timestamp" column="login_time"/>
+<property name="logoutTime" type="java.sql.Timestamp" column="logout_time"/>
+<property name="deviceType" type="java.lang.String" column="device_type"/>
+<property name="deviceVender" type="java.lang.String" column="device_vender"/>
+<property name="deviceSeries" type="java.lang.String" column="device_series"/>
+<property name="deviceVersion" type="java.lang.String" column="device_version"/>
+<property name="browserType" type="java.lang.String" column="browser_type"/>
+<property name="browserVersion" type="java.lang.String" column="browser_version"/>
+<property name="platformType" type="java.lang.String" column="platform_type"/>
+<property name="platformSeries" type="java.lang.String" column="platform_series"/>
+<property name="platformVersion" type="java.lang.String" column="platform_version"/>
+<property name="ipAddress" type="java.lang.String" column="ip_address"/>
+</class>
+</hibernate-mapping>

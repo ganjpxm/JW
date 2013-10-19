@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="org.ganjp.jpw.cm.model.CmEvaluateTable" table="cm_evaluate_table">
+<id name="evaluateTableId" column="evaluate_table_id" type="java.lang.String" unsaved-value="">
+<generator class="uuid"/>
+</id>
+<property name="tableCd" type="java.lang.String" column="table_cd"/>
+<property name="tableName" type="java.lang.String" column="table_name"/>
+<property name="tableType" type="java.lang.String" column="table_type"/>
+<property name="startDate" type="java.sql.Date" column="start_date"/>
+<property name="endDate" type="java.sql.Date" column="end_date"/>
+<property name="roleIds" type="java.lang.String" column="role_ids"/>
+<property name="operatorId" type="java.lang.String" column="operator_id"/>
+<property name="operatorName" type="java.lang.String" column="operator_name"/>
+<property name="createDateTime" type="java.sql.Timestamp" column="create_date_time"/>
+<property name="modifyTimestamp" type="java.sql.Timestamp" column="modify_timestamp"/>
+<property name="dataState" type="java.lang.String" column="data_state"/>
+</class>
+</hibernate-mapping>

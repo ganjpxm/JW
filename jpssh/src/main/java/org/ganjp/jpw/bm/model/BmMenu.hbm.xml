@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="org.ganjp.jpw.bm.model.BmMenu" table="bm_menu">
+<id name="menuId" column="menu_id" type="java.lang.String" unsaved-value="">
+<generator class="uuid"/>
+</id>
+<property name="menuPid" type="java.lang.String" column="menu_pid"/>
+<property name="menuCd" type="java.lang.String" column="menu_cd"/>
+<property name="menuName" type="java.lang.String" column="menu_name"/>
+<property name="imageUrl" type="java.lang.String" column="image_url"/>
+<property name="url" type="java.lang.String" column="url"/>
+<property name="displayLevel" type="java.lang.Integer" column="display_level"/>
+<property name="displayNo" type="java.lang.Integer" column="display_no"/>
+<property name="endFlag" type="java.lang.String" column="end_flag"/>
+<property name="menuCategoryId" type="java.lang.String" column="menu_category_id"/>
+<property name="lang" type="java.lang.String" column="lang"/>
+<property name="modifyTimestamp" type="java.sql.Timestamp" column="modify_timestamp"/>
+<property name="createDateTime" type="java.sql.Timestamp" column="create_date_time"/>
+<property name="dataState" type="java.lang.String" column="data_state"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="org.ganjp.jpw.am.model.AmUserDetail" table="am_user_detail">
+<id name="userDetailId" column="user_detail_id" type="java.lang.String" unsaved-value="">
+<generator class="uuid"/>
+</id>
+<property name="userId" type="java.lang.String" column="user_id"/>
+<property name="homePhone" type="java.lang.String" column="home_phone"/>
+<property name="countryId" type="java.lang.String" column="country_id"/>
+<property name="provinceId" type="java.lang.String" column="province_id"/>
+<property name="cityId" type="java.lang.String" column="city_id"/>
+<property name="birthPlace" type="java.lang.String" column="birth_place"/>
+<property name="livePlace" type="java.lang.String" column="live_place"/>
+<property name="annualIncome" type="java.math.BigDecimal" column="annual_income"/>
+<property name="jobCategoryPid" type="java.lang.String" column="job_category_pid"/>
+<property name="jobCategoryId" type="java.lang.String" column="job_category_id"/>
+<property name="jobPositionId" type="java.lang.String" column="job_position_id"/>
+<property name="companyName" type="java.lang.String" column="company_name"/>
+<property name="shoolName" type="java.lang.String" column="shool_name"/>
+<property name="educationId" type="java.lang.String" column="education_id"/>
+<property name="interestIds" type="java.lang.String" column="interest_ids"/>
+<property name="passwordTipCustom" type="java.lang.String" column="password_tip_custom"/>
+<property name="passwordTipId" type="java.lang.String" column="password_tip_id"/>
+<property name="passwordTipAnswer" type="java.lang.String" column="password_tip_answer"/>
+<property name="signature" type="java.lang.String" column="signature"/>
+<property name="remark" type="java.lang.String" column="remark"/>
+<property name="createDateTime" type="java.sql.Timestamp" column="create_date_time"/>
+<property name="modifyTimestamp" type="java.sql.Timestamp" column="modify_timestamp"/>
+<property name="dataState" type="java.lang.String" column="data_state"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="org.ganjp.jpw.cm.model.CmArticle" table="cm_article">
+<id name="articleId" column="article_id" type="java.lang.String" unsaved-value="">
+<generator class="uuid"/>
+</id>
+<property name="articleCd" type="java.lang.String" column="article_cd"/>
+<property name="title" type="java.lang.String" column="title"/>
+<property name="content" type="java.lang.String" column="content"/>
+<property name="author" type="java.lang.String" column="author"/>
+<property name="imageUrl" type="java.lang.String" column="image_url"/>
+<property name="originUrl" type="java.lang.String" column="origin_url"/>
+<property name="displayNo" type="java.lang.Integer" column="display_no"/>
+<property name="lang" type="java.lang.String" column="lang"/>
+<property name="roleIds" type="java.lang.String" column="role_ids"/>
+<property name="operatorId" type="java.lang.String" column="operator_id"/>
+<property name="operatorName" type="java.lang.String" column="operator_name"/>
+<property name="createDateTime" type="java.sql.Timestamp" column="create_date_time"/>
+<property name="modifyTimestamp" type="java.sql.Timestamp" column="modify_timestamp"/>
+<property name="dataState" type="java.lang.String" column="data_state"/>
+</class>
+</hibernate-mapping>

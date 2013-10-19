@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="org.ganjp.jpw.cm.model.CmUserEvaluateTableResult" table="cm_user_evaluate_table_result">
+<id name="userEvaluateTableResultId" column="user_evaluate_table_result_id" type="java.lang.String" unsaved-value="">
+<generator class="uuid"/>
+</id>
+<property name="userId" type="java.lang.String" column="user_id"/>
+<property name="evaluateTableId" type="java.lang.String" column="evaluate_table_id"/>
+<property name="result" type="java.lang.String" column="result"/>
+<property name="score" type="java.math.BigDecimal" column="score"/>
+<property name="remark" type="java.lang.String" column="remark"/>
+<property name="operatorId" type="java.lang.String" column="operator_id"/>
+<property name="operatorName" type="java.lang.String" column="operator_name"/>
+<property name="createDateTime" type="java.sql.Timestamp" column="create_date_time"/>
+<property name="modifyTimestamp" type="java.sql.Timestamp" column="modify_timestamp"/>
+<property name="dataState" type="java.lang.String" column="data_state"/>
+</class>
+</hibernate-mapping>

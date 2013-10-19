@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="org.ganjp.jpw.cm.model.CmVocabulary" table="cm_vocabulary">
+<id name="vocabularyId" column="vocabulary_id" type="java.lang.String" unsaved-value="">
+<generator class="uuid"/>
+</id>
+<property name="firstName" type="java.lang.String" column="first_name"/>
+<property name="fistPhonogram" type="java.lang.String" column="fist_phonogram"/>
+<property name="fistPronounceUrl" type="java.lang.String" column="fist_pronounce_url"/>
+<property name="secondName" type="java.lang.String" column="second_name"/>
+<property name="secondPhonogram" type="java.lang.String" column="second_phonogram"/>
+<property name="secondPronounceUrl" type="java.lang.String" column="second_pronounce_url"/>
+<property name="imageUrl" type="java.lang.String" column="image_url"/>
+<property name="tag" type="java.lang.String" column="tag"/>
+<property name="levelId" type="java.lang.String" column="level_id"/>
+<property name="levelName" type="java.lang.String" column="level_name"/>
+<property name="displayNo" type="java.lang.Integer" column="display_no"/>
+<property name="description" type="java.lang.String" column="description"/>
+<property name="lang" type="java.lang.String" column="lang"/>
+<property name="roleIds" type="java.lang.String" column="role_ids"/>
+<property name="operatorId" type="java.lang.String" column="operator_id"/>
+<property name="operatorName" type="java.lang.String" column="operator_name"/>
+<property name="createDateTime" type="java.sql.Timestamp" column="create_date_time"/>
+<property name="modifyTimestamp" type="java.sql.Timestamp" column="modify_timestamp"/>
+<property name="dataState" type="java.lang.String" column="data_state"/>
+</class>
+</hibernate-mapping>

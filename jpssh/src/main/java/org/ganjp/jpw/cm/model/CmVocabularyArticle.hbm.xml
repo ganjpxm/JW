@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="org.ganjp.jpw.cm.model.CmVocabularyArticle" table="cm_vocabulary_article">
+<id name="vocabularyArticleId" column="vocabulary_article_id" type="java.lang.String" unsaved-value="">
+<generator class="uuid"/>
+</id>
+<property name="articleId" type="java.lang.String" column="article_id"/>
+<property name="vocabularyId" type="java.lang.String" column="vocabulary_id"/>
+<property name="createDateTime" type="java.sql.Timestamp" column="create_date_time"/>
+<property name="modifyTimestamp" type="java.sql.Timestamp" column="modify_timestamp"/>
+<property name="dataState" type="java.lang.String" column="data_state"/>
+</class>
+</hibernate-mapping>

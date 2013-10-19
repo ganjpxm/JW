@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="org.ganjp.jpw.bm.model.BmConfig" table="bm_config">
+<id name="configId" column="config_id" type="java.lang.String" unsaved-value="">
+<generator class="uuid"/>
+</id>
+<property name="configCd" type="java.lang.String" column="config_cd"/>
+<property name="configName" type="java.lang.String" column="config_name"/>
+<property name="configValue" type="java.lang.String" column="config_value"/>
+<property name="description" type="java.lang.String" column="description"/>
+<property name="lang" type="java.lang.String" column="lang"/>
+<property name="createDateTime" type="java.sql.Timestamp" column="create_date_time"/>
+<property name="modifyTimestamp" type="java.sql.Timestamp" column="modify_timestamp"/>
+<property name="dataState" type="java.lang.String" column="data_state"/>
+</class>
+</hibernate-mapping>
