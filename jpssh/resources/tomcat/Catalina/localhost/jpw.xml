@@ -1,0 +1,8 @@
+<Context path="/jpw" docBase="/root/ganjp/program/apache-tomcat-7.0.29/war/jpw-1.0-B20120906" debug="0" reloadable="true">
+       <Resource name="jdbc/jpw" auth="Container" type="javax.sql.DataSource"
+	    maxIdle="1000" maxWait="50000" maxActive="30" 
+	    driverClassName="com.mysql.jdbc.Driver"
+	    username="root" password="ganjp" 
+	    url="jdbc:mysql://198.101.207.178:3306/jpdb?useUnicode=true&amp;characterEncoding=utf-8"/>
+</Context>
+

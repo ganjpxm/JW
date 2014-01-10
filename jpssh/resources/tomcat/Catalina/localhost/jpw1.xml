@@ -1,0 +1,41 @@
+<Context path="/jpw" docBase="C:/j2ee/eclipse/workspace/coss/web" debug="99" reloadable="false">
+	<!--  
+	<Resource name="jdbc/jpw" auth="Container" type="javax.sql.DataSource"
+	    maxIdle="1000" maxWait="50000" 
+	    driverClassName="com.mysql.jdbc.Driver"
+	    username="root" password="1" 
+	    url="jdbc:mysql://localhost:3306/jpw?useUnicode=true&amp;characterEncoding=utf-8"
+	    maxActive="30" />
+	<Resource name="jdbc/jpw" auth="Container"
+	    maxPoolSize="10" idleConnectionTestPeriod="60" minPoolSize="2" acquireIncrement="2"
+	    driverClass="com.mysql.jdbc.Driver" 
+	    user="evanlow_user" password="1qazxsw2"
+	    factory="org.apache.naming.factory.BeanFactory"
+	    type="com.mchange.v2.c3p0.ComboPooledDataSource"
+	    jdbcUrl="jdbc:mysql://108.175.151.2:3306/evanlow_cossdemo03?useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true"/>
+	<Resource name="jdbc/jpw" auth="Container"  type="javax.sql.DataSource"  
+         factory="org.logicalcobwebs.proxool.ProxoolDataSource"      
+         proxool.alias="coss"      
+         user="evanlow_user"    
+         password="1qazxsw2"      
+         delegateProperties="foo=1,bar=true"  
+         proxool.driver-url="jdbc:mysql://108.175.151.2:3306/evanlow_cossdemo04?useUnicode=true&amp;characterEncoding=utf-8"      
+         proxool.driver-class="com.mysql.jdbc.Driver"    
+         proxool.house-keeping-sleep-time="900000"    
+         proxool.maximum-active-time="5"  
+         proxool.prototype-count="3"  
+         proxool.statistics="1m,15m,1d"  
+         proxool.simultaneous-build-throttle="10"  
+         proxool.minimum-connection-count="5"  
+         proxool.maximum-connection-count="15"  
+         proxool.house-keeping-test-sql="select CURRENT_DATE from dual"   
+         proxool.test-before-use="true"/>  
+	-->
+	<Resource name="jdbc/jpw" auth="Container" type="javax.sql.DataSource"
+	    maxIdle="1000" maxWait="50000" 
+	    driverClassName="com.mysql.jdbc.Driver"
+	    username="root" password="1" 
+	    url="jdbc:mysql://localhost:3306/jpw?useUnicode=true&amp;characterEncoding=utf-8"
+	    maxActive="30" />
+	    
+</Context>

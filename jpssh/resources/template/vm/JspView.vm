@@ -1,0 +1,47 @@
+<%@ page language="java" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ include file="/page/inc/taglib.jsp" %>
+<html>
+<head>
+  <title><fmt:message key="${LOWER_CLASS_NAME}.form.tile"/></title>
+  <%@ include file="/page/inc/head.jsp" %>
+</head>
+#set($dot="$")
+<body>
+<%@ include file="/page/inc/header.jsp" %>
+<div class="main">
+  <div id="content" class="dp100 mt1">	
+    <form id="${LOWER_CLASS_NAME}Form" action="<c:url value='/servlet/${LOWER_CLASS_NAME}?action=show'/>" method="post">
+      <input type="hidden" name="${ID}" value="<c:out value='${dot}{${LOWER_CLASS_NAME}.${ID}}'/>"/>
+      <table id="${LOWER_CLASS_NAME}Table" class="table">
+  	    <caption><fmt:message key="${LOWER_CLASS_NAME}.form.tile"/></caption>
+  	    <tbody class="formView">
+  	      <!--#set($count=0)#foreach( $name in $ALL_FIELD_NAMES )$ALL_FIELD_NAMES.get($count),#set($count=$count+1)#end-->
+  	      <tr>
+		    <th><fmt:message key="${LOWER_CLASS_NAME}.fieldName1"/>:</th>
+		    <td><c:out value='${dot}{${LOWER_CLASS_NAME}.fieldName1}'/></td>
+		    <th><fmt:message key="${LOWER_CLASS_NAME}.fieldName2"/>:</th>
+		    <td><c:out value='${dot}{${LOWER_CLASS_NAME}.fieldName2}'/></td>
+		    <th><fmt:message key="${LOWER_CLASS_NAME}.fieldName3"/>:</th>
+		    <td><c:out value='${dot}{${LOWER_CLASS_NAME}.fieldName3}'/></td>
+	      </tr>
+	    </tbody>
+	    <tfoot>
+		  <tr>
+		    <td colspan="6" >
+			  <input style="width:50px" type="button" onclick="window.location = '<c:url value='/servlet/${LOWER_CLASS_NAME}?action=toList'/>'" 
+			  	value="<fmt:message key='button.back'/>" />
+		    </td>
+		  </tr>
+	    </tfoot>
+  	  </table>
+    </form>
+  </div>
+</div>
+<%@ include file="/page/inc/header.jsp" %>
+</body>
+</html>
+<script type="text/javascript">
+<!--
+
+//-->
+</script>

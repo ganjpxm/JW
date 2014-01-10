@@ -1,0 +1,88 @@
+/**
+ * $Id: ${UPPER_CLASS_NAME}Controller.java,v 1.0 2012/08/19 17:09:49 GanJianping Exp $
+ *
+ * Copyright (c) 2012 Gan Jianping. All rights reserved
+ * Jpw Project
+ *
+ */
+package ${BASE_PACKAGE}.${MODULE_NAME}.controller;
+
+import ${BASE_PACKAGE}.${MODULE_NAME}.model.${UPPER_CLASS_NAME};
+import ${BASE_PACKAGE}.${MODULE_NAME}.service.${UPPER_CLASS_NAME}Manager;
+import org.ganjp.jpw.core.web.controller.BaseController;
+import org.ganjp.jpw.bm.model.BmMenu;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.PathVariable;
+
+/**
+ * <p>${UPPER_CLASS_NAME}Controller</p>
+ * 
+ * @author GanJianping
+ * @since 1.0
+ */
+@Controller
+public class ${UPPER_CLASS_NAME}Controller extends BaseController {
+	@RequestMapping(value = "/${LOWER_CLASS_NAME}", method = RequestMethod.GET)
+	public String to${UPPER_CLASS_NAME}JqmList(HttpServletRequest request) {
+		List<${UPPER_CLASS_NAME}> ${LOWER_CLASS_NAME}s = ${LOWER_CLASS_NAME}Manager.get${UPPER_CLASS_NAME}s();
+		request.setAttribute("${LOWER_CLASS_NAME}s", ${LOWER_CLASS_NAME}s);
+		super.setLeftMenu(request, BmMenu.MENU_TYPE_MANAGEMENT_CONSOLE);
+        return "${MODULE_NAME}/${LOWER_CLASS_NAME}/${LOWER_CLASS_NAME}JqmList";
+	}
+	
+	@RequestMapping(value = "/${LOWER_CLASS_NAME}JqmAdd", method = RequestMethod.GET)
+	public String to${UPPER_CLASS_NAME}JqmAdd(HttpServletRequest request) {
+        return "${MODULE_NAME}/${LOWER_CLASS_NAME}/${LOWER_CLASS_NAME}JqmAdd";
+	}
+	
+	@RequestMapping(value = "/${LOWER_CLASS_NAME}JqmEdit/{${ID}}", method = RequestMethod.GET)
+	public String to${UPPER_CLASS_NAME}JqmEdit(@PathVariable String ${ID}, HttpServletRequest request) {
+		${UPPER_CLASS_NAME} ${LOWER_CLASS_NAME} = ${LOWER_CLASS_NAME}Manager.get${UPPER_CLASS_NAME}ById(${ID});
+		request.setAttribute("${LOWER_CLASS_NAME}",${LOWER_CLASS_NAME});
+        return "${MODULE_NAME}/${LOWER_CLASS_NAME}/${LOWER_CLASS_NAME}JqmEdit";
+	}
+	
+	@RequestMapping(value = "/save${UPPER_CLASS_NAME}", method = RequestMethod.POST)
+	public String save${UPPER_CLASS_NAME}(HttpServletRequest request, RedirectAttributes ra) {
+		${UPPER_CLASS_NAME} ${LOWER_CLASS_NAME} = new ${UPPER_CLASS_NAME}();
+		setValue(request, ${LOWER_CLASS_NAME});
+		${LOWER_CLASS_NAME}Manager.save(${LOWER_CLASS_NAME});
+		ra.addAttribute("menuId", request.getParameter("menuId"));
+		return "redirect:/${LOWER_CLASS_NAME}";
+	}
+	
+	@RequestMapping(value = "/update${UPPER_CLASS_NAME}", method = RequestMethod.POST)
+	public String update${UPPER_CLASS_NAME}(HttpServletRequest request, RedirectAttributes ra) {
+		String ${ID} = request.getParameter("${ID}");
+		${UPPER_CLASS_NAME} ${LOWER_CLASS_NAME} = ${LOWER_CLASS_NAME}Manager.get${UPPER_CLASS_NAME}ById(${ID});
+		setValue(request, ${LOWER_CLASS_NAME});
+		${LOWER_CLASS_NAME}Manager.update(${LOWER_CLASS_NAME});
+		ra.addAttribute("menuId", request.getParameter("menuId"));
+		return "redirect:/${LOWER_CLASS_NAME}"; 
+	}
+	
+	@RequestMapping(value = "/delete${UPPER_CLASS_NAME}/{${ID}}", method = RequestMethod.GET)
+	public String delete${UPPER_CLASS_NAME}(@PathVariable String ${ID}, HttpServletRequest request, RedirectAttributes ra) {
+		${LOWER_CLASS_NAME}Manager.delete(${ID});
+		ra.addAttribute("menuId", request.getParameter("menuId"));
+		return "redirect:/${LOWER_CLASS_NAME}"; 
+	}
+
+	@RequestMapping(value = "/delete${UPPER_CLASS_NAME}s", method = RequestMethod.POST)
+	public String delete${UPPER_CLASS_NAME}s(HttpServletRequest request, RedirectAttributes ra) {
+		${LOWER_CLASS_NAME}Manager.batchDelete(request.getParameter("${ID}s"));
+		ra.addAttribute("menuId", request.getParameter("menuId"));
+		return "redirect:/${LOWER_CLASS_NAME}"; 
+	}	
+	@Resource(name="${LOWER_CLASS_NAME}ManagerImpl")
+	private ${UPPER_CLASS_NAME}Manager ${LOWER_CLASS_NAME}Manager;
+}

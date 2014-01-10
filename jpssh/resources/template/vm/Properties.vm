@@ -1,0 +1,11 @@
+# -- ${LOWER_CLASS_NAME}-START
+${LOWER_CLASS_NAME}.list.title=${UPPER_CLASS_NAME} List
+${LOWER_CLASS_NAME}.add.title=Add ${LOWER_CLASS_NAME}
+${LOWER_CLASS_NAME}.edit.title=Edit ${LOWER_CLASS_NAME}
+${LOWER_CLASS_NAME}.detail.title=${UPPER_CLASS_NAME} Detail
+#foreach( $name in $ALL_FIELD_NAMES )
+#if( $name != 'dataState' && $name != 'createDateTime' && $name != 'lang' && $name != 'description' && $name != 'remark' && $name != 'operatorId' && $name != 'operatorName' && $name != 'modifyTimestamp' )
+${LOWER_CLASS_NAME}.$name = $name
+#end
+#end
+# -- ${LOWER_CLASS_NAME}-END

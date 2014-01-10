@@ -1,0 +1,63 @@
+/**
+ * $Id: ${UPPER_CLASS_NAME}.java,v 1.0 2012/08/19 00:16:55 GanJianping Exp $
+ *
+ * Copyright (c) 2012 Gan Jianping. All rights reserved
+ * Jpw Project
+ *
+ */
+package ${BASE_PACKAGE}.${MODULE_NAME}.model;
+
+import org.ganjp.jpw.core.model.BaseModel;
+import org.ganjp.jpw.core.dao.uuid.UUIDHexGenerator;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+#foreach( $type in $IMPORT_TYPES )
+import $type;
+#end
+
+/**
+ * <p>${UPPER_CLASS_NAME}</p>
+ * 
+ * @author GanJianping
+ * @since 1.0
+ */
+@Entity
+@Table(name="${TABLE_NAME}")
+public class ${UPPER_CLASS_NAME} extends BaseModel{
+	@Id
+	@Column(name="${COLUMN_ID}")
+	private String ${ID} = UUIDHexGenerator.getUuid();
+	
+	#set($count=0)#foreach( $name in $ALL_FIELD_NAMES )
+#if( $name != $ID )@Column(name="$ALL_COLUMN_NAMES.get($count)")
+	private $ALL_SIMPLE_FIELD_TYPES.get($count) $name;
+	#end 
+	#set($count=$count+1)#end
+	
+	//----------------------------------------------- default constructor --------------------------
+    public ${UPPER_CLASS_NAME}() {
+    	super();
+    }
+    
+    //------------------------------------------------ Property accessors --------------------------
+#set($index=0)#foreach( $fieldName in $ALL_FIELD_NAMES )
+/**
+	 * @return $ALL_SIMPLE_FIELD_TYPES.get($index)
+	 */
+	public $ALL_SIMPLE_FIELD_TYPES.get($index) get$ALL_UPPER_FIELD_NAMES.get($index)() {
+        return this.$fieldName;
+    }
+    
+    /**
+	 * @param $ALL_SIMPLE_FIELD_TYPES.get($index) $ALL_FIELD_NAMES.get($index)
+	 */
+    public void set$ALL_UPPER_FIELD_NAMES.get($index)($ALL_SIMPLE_FIELD_TYPES.get($index) $ALL_FIELD_NAMES.get($index)) {
+		this.$fieldName = $fieldName;
+    }
+    #set($index=$index+1)#end
+ 
+}
