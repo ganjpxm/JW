@@ -1,0 +1,211 @@
+/*********************************** add jquery mobile ********************************/
+.ui-icon-jp-edit {background:url(image/jp/icon/edit.png) no-repeat!important;}
+.ui-icon-jp-save {background:url(image/jp/icon/save.png) no-repeat!important;}
+.ui-icon-jp-cancel {background:url(image/jp/icon/cancel.png) no-repeat!important;}
+.ui-icon-jp-delete {background:url(image/jp/icon/delete.png) no-repeat!important;}
+.ui-icon-jp-add {background:url(image/jp/icon/add.png) no-repeat!important;}
+.ui-icon-jp-view {background:url(image/jp/icon/view.png) no-repeat!important;}
+.ui-icon-jp-confirm {background:url(image/jp/icon/view.png) no-repeat!important;}
+.ui-icon-jp-export {background:url(image/jp/icon/export.gif) no-repeat!important;}
+.ui-icon-jp-import {background:url(image/jp/icon/import.png) no-repeat!important;}
+.ui-icon-jp-email {background:url(image/jp/icon/sendEmail.jpg) no-repeat!important;}
+.ui-icon-jp-down {background:url(image/jp/icon/down.gif) no-repeat!important;}
+.ui-icon-jp-share {background:url(image/jp/icon/share.png) no-repeat!important;}
+.ui-icon-jp-back {background:url(image/jp/icon/back-16-16.png) no-repeat!important;}
+.ui-icon-jp-sign-in {background:url(image/jp/icon/sign-in.gif) no-repeat!important;}
+.ui-icon-jp-sign-up {background:url(image/jp/icon/sign-up.gif) no-repeat!important;}
+.ui-icon-jp-theme {background:url(image/jp/icon/theme.png) no-repeat!important;}
+.ui-icon-jp-lang {background:url(image/jp/icon/language.gif) no-repeat!important;}
+.ui-icon-youdao {background:url(image/jp/icon/youdao_icon.ico) no-repeat!important;}
+
+/*********************************** override jquery mobile ********************************/
+.ui-content .ui-listview-inset {margin-top:0;}
+.ui-dialog .ui-header {margin-top:-40px;}
+.ui-dialog-contain {margin:5% auto 15px; width:600px; max-width:800px;}
+
+/********************************** add jquery mobile theme *******************************/
+/* F bar theme - just for the docs overview headers */
+.ui-bar-f {
+	border-top: 1px solid 	#56A00E;
+	border-bottom: 1px solid #56A00E;
+	background: 			#74b042;
+	color: 					#fff;
+	font-weight: bold;
+	text-shadow: 0 -1px 1px #234403;	
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#74b042), to(#56A00E)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(#74b042, #56A00E); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(#74b042, #56A00E); /* FF3.6 */
+	background-image:     -ms-linear-gradient(#74b042, #56A00E); /* IE10 */
+	background-image:      -o-linear-gradient(#74b042, #56A00E); /* Opera 11.10+ */
+	background-image:         linear-gradient(#74b042, #56A00E);		
+}
+.ui-bar-f,
+.ui-bar-f .ui-link-inherit {
+	color: 					#fff;
+}
+.ui-bar-f .ui-link {
+	color: 					#fff;
+	font-weight: bold;
+}
+.ui-btn-up-f {
+	border: 1px solid 		#3B6F07;
+	background: 			#56A00E;
+	font-weight: bold;
+	color: 					#fff;
+	text-shadow: 0 -1px 1px #234403;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#74b042), to(#56A00E)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(#74b042, #56A00E); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(#74b042, #56A00E); /* FF3.6 */
+	background-image:     -ms-linear-gradient(#74b042, #56A00E); /* IE10 */
+	background-image:      -o-linear-gradient(#74b042, #56A00E); /* Opera 11.10+ */
+	background-image:         linear-gradient(#74b042, #56A00E);
+}
+.ui-btn-up-f a.ui-link-inherit {
+	color: 					#fff;
+}
+.ui-btn-hover-f {
+	border: 1px solid 		#3B6F07;
+	background: 			#6EBC1F;
+	font-weight: bold;
+	color: 					#fff;
+	text-shadow: 0 -1px 1px #234403;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#8FC963), to(#6EBC1F)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(#8FC963, #6EBC1F); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(#8FC963, #6EBC1F); /* FF3.6 */
+	background-image:     -ms-linear-gradient(#8FC963, #6EBC1F); /* IE10 */
+	background-image:      -o-linear-gradient(#8FC963, #6EBC1F); /* Opera 11.10+ */
+	background-image:         linear-gradient(#8FC963, #6EBC1F);
+}
+.ui-btn-hover-f a.ui-link-inherit {
+	color: 					#fff;
+}
+.ui-btn-down-f {
+	border: 1px solid 		#3B6F07;
+	background: 			#3d3d3d;
+	font-weight: bold;
+	color: 					#fff;
+	text-shadow: 0 -1px 1px #234403;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#56A00E), to(#64A234)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(#56A00E, #64A234); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(#56A00E, #64A234); /* FF3.6 */
+	background-image:     -ms-linear-gradient(#56A00E, #64A234); /* IE10 */
+	background-image:      -o-linear-gradient(#56A00E, #64A234); /* Opera 11.10+ */
+	background-image:         linear-gradient(#56A00E, #64A234);
+}
+.ui-btn-down-f a.ui-link-inherit {
+	color: 					#fff;
+}
+.ui-btn-up-f,
+.ui-btn-hover-f,
+.ui-btn-down-f {
+	font-family: Helvetica, Arial, sans-serif;
+	text-decoration: none;
+}
+
+
+/*********************************** jquery.mobile.simpledialog.css ********************************/
+.ui-simpledialog-header h4 { margin-top: 5px; margin-bottom: 5px; text-align: center; }
+.ui-simpledialog-container { border: 5px solid #111 !important; width:85%; max-width:500px;}
+.ui-simpledialog-screen { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; }
+.ui-simpledialog-hidden { display: none; }
+.ui-simpledialog-input { width: 85% !important; display: block !important; margin-left: auto; margin-right: auto;}
+.ui-simpledialog-screen-modal { background-color: black; -moz-opacity: 0.8; opacity:.80; filter: alpha(opacity=80); }
+.ui-simpledialog-subtitle { text-align: center; }
+.ui-simpledialog-controls .buttons-separator {min-height: .6em;}
+.ui-simpledialog-controls .button-hidden { display:none; }
+.ui-dialog .ui-simpledialog-container { border: none !important; }
+.ui-dialog-simpledialog .ui-content { padding: 5px !important;}
+
+/*********************************** jquery mobile datebox ********************************/
+/*
+ * jQuery Mobile Framework : plugin to provide a date and time picker.
+ * Copyright (c) JTSage
+ * CC 3.0 Attribution.  May be relicensed without permission/notification.
+ * https://github.com/jtsage/jquery-mobile-datebox
+ */
+/* Base input element Styles */
+.ui-input-datebox { width: 97%; background-image: none; padding: .4em; line-height: 1.4; font-size: 16px; display: block; padding-top: 0px; padding-bottom: 0px; } 
+.ui-input-datebox { min-height: 38px; } /* Fix for IE8 */
+.ui-input-datebox .ui-btn-icon-notext { margin-top: 5px !important; margin-bottom: 5px !important; }
+.ui-input-datebox input { width: 100% !important; padding: 0 !important; margin-top: 5px !important; margin-right: -40px !important; border: 1px solid transparent !important; vertical-align: middle; display: inline-block !important; background-color: transparent; zoom: 1; *display: inline; }
+.ui-input-datebox input:focus { outline: none;}
+.ui-input-datebox .ui-btn-text {display: none;}
+.ui-input-datebox.ui-mini { min-height: 30px; font-size: 14px; }
+.ui-input-datebox.ui-mini .ui-btn-icon-notext { margin-top: 2px !important; margin-bottom: 2px !important; }
+.ui-icon-datebox { background-image: url('image/datebox.png') !important; background-repeat: no-repeat; background-position: 99% 8px; }
+.ui-icon-datebox-alt { background-image: url('image/datebox.png') !important; background-repeat: no-repeat; background-position: 99% -28px; }
+.ui-mini.ui-icon-datebox { background-position: 99% 6px; }
+.ui-mini.ui-icon-datebox-alt { background-position: 99% -30px; }
+@media all and (min-width: 450px){
+  .ui-field-contain .ui-input-datebox { width: 75%; display: inline-block; } 
+  .ui-hide-label .ui-input-datebox { width: 100%; }
+}
+/* Full width if in a grid, ignore the media query */
+.ui-grid-a .ui-input-datebox { width: 97%; }
+.ui-grid-b .ui-input-datebox { width: 97%; }
+.ui-grid-c .ui-input-datebox { width: 97%; }
+.ui-grid-d .ui-input-datebox { width: 97%; }
+.ui-grid-e .ui-input-datebox { width: 97%; }
+/* Define a grid, just in case. */
+/* grid d: 16.65/16.65/16.65/16.65/16.65/16.65 */
+.ui-grid-e .ui-block-a, .ui-grid-e .ui-block-b, .ui-grid-e .ui-block-c, .ui-grid-e .ui-block-d, .ui-grid-e .ui-block-e, .ui-grid-e .ui-block-f { width: 16.65%; }
+.ui-grid-e > :nth-child(n) { width: 16.65%; }
+.ui-grid-e .ui-block-a { clear: left; }
+.ui-grid-e { overflow: hidden; }
+.ui-block-f { margin: 0; padding: 0; border: 0; float: left; min-height: 1px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; }
+/* Calendar Mode Styles */
+.ui-datebox-gridheader { text-align: center; }
+.ui-datebox-gridheader h4 { text-align: center; display: inline-block; margin-top: 10px; margin-bottom: 10px; zoom:1; *display: inline;}
+.ui-datebox-gridplus { float: right; }
+.ui-datebox-gridminus { float: left; }
+.ui-datebox-gridplus-rtl { float: left; }
+.ui-datebox-gridminus-rtl { float: right; }
+.ui-datebox-gridrow { margin-left: 5px; margin-right: 5px; }
+.ui-datebox-grid { clear: both; margin-bottom: 5px; }
+.ui-datebox-griddate { width: 36px; height: 30px; display: inline-block; vertical-align: middle; text-align: center; line-height: 30px; font-weight: bold; font-size: 12px; zoom:1; *display: inline;}
+.ui-datebox-griddate-week { width: 31px; height: 30px; display: inline-block; vertical-align: middle; text-align: center; line-height: 30px; font-weight: bold; font-size: 12px; zoom:1; *display: inline;}
+.ui-datebox-griddate-empty { border: 1px solid transparent; color: #888; }
+.ui-datebox-griddate-label { height: 15px !important; line-height: 15px !important; color: black;}
+.ui-datebox-griddate-disable { color: #888; }
+/* Android Mode Styles */
+.ui-datebox-header h4 { margin-top: 5px; margin-bottom: 5px; text-align: center; }
+.ui-datebox-container fieldset div { margin: 0px !important; }
+.ui-datebox-dboxin input { text-align: center; }
+.ui-datebox-dboxin label { width: 100%; text-align: center; display: block; margin-top: 5px; margin-bottom: -8px; }
+.ui-datebox-controls { text-align: center; }
+.ui-datebox-controls div { width: 77px; text-align: center; display: inline-block; zoom: 1; *display: inline;}
+.ui-datebox-scontrols { text-align: center; }
+.ui-datebox-scontrols div { width: 55px; text-align: center; display: inline-block; zoom: 1; *display: inline;}
+.ui-datebox-scontrols .ui-datebox-sinput { width: 68px; }
+.ui-datebox-scontrols .ui-datebox-sinput input { width: 48px; text-align: center; margin-left: 3px; }
+.ui-datebox-input { width: 74px !important; margin-left: 1px; margin-right: 1px; text-align: center !important; display: inline-block !important; zoom:1; *display: inline; }
+/* Slide Mode Styles */
+.ui-datebox-slide { width: 280px; margin-left: auto; margin-right: auto;}
+.ui-datebox-sliderow-d { margin-bottom: 5px; text-align: center; height: 40px; width: 280px; overflow: hidden;}
+.ui-datebox-sliderow-ym { margin-bottom: 5px; text-align: center; height: 32px; width: 280px; overflow: hidden;}
+.ui-datebox-sliderow-hi { text-align: center; height: 32px; width: 280px; overflow: hidden;}
+.ui-datebox-sliderow-int { display: inline-block; white-space: nowrap;}
+.ui-datebox-slideyear { text-align: center; display: inline-block; zoom:1; *display:inline; width: 84px; vertical-align: middle; line-height: 30px; height: 30px; font-size: 14px; font-weight: bold; }
+.ui-datebox-slidemonth { text-align: center; display: inline-block; zoom:1; *display:inline; width: 51px; vertical-align: middle; line-height: 30px; height: 30px; font-size: 12px; font-weight: bold; }
+.ui-datebox-slideday { text-align: center; display: inline-block; zoom:1; *display:inline; width: 32px; vertical-align: middle; line-height: 20px; height: 38px; font-size: 14px; font-weight: bold; }
+.ui-datebox-slidehour { text-align: center; display: inline-block; zoom:1; *display:inline; width: 32px; vertical-align: middle; line-height: 22px; height: 24px; font-size: 14px; font-weight: bold; }
+.ui-datebox-slidemins { text-align: center; display: inline-block; zoom:1; *display:inline; width: 32px; vertical-align: middle; line-height: 22px; height: 24px; font-size: 14px; font-weight: bold; }
+.ui-datebox-slidearrow { text-align: center; display: inline-block; zoom:1; *display:inline; width: 10px; vertical-align: middle; line-height: 38px; height: 38px; font-size: 10px; font-weight: bold; }
+.ui-datebox-slidewday { font-size: 10px; font-weight: normal; }
+/* Flip Mode Styles */
+.ui-datebox-flipcontent { text-align: center; height: 125px; margin-bottom: -40px;}
+.ui-datebox-flipcontent div { margin-left: 3px; margin-right: 3px; width: 77px; height: 120px; display: inline-block; text-align: center; zoom: 1; *display: inline; overflow: hidden;}
+.ui-datebox-flipcenter { border: 1px solid #eee; height: 40px; margin-left: 10px; width: 260px; margin-right: auto; margin-left: auto; position: relative; top: -45px;}
+.ui-datebox-flipcontent ul { list-style-type: none; display: inline; }
+.ui-datebox-flipcontent li { height: 30px; }
+.ui-datebox-flipcontent li span { margin-top: 7px; display: block; }
+/* Shared Styles */
+.ui-datebox-container { border: 5px solid #111 !important; width: 280px; }
+.ui-datebox-screen { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; }
+.ui-datebox-screen-modal { background-color: black; -moz-opacity: 0.8; opacity:.80; filter: alpha(opacity=80); }
+.ui-datebox-hidden { display: none; }
+.ui-dialog .ui-datebox-container { border: none !important; }
+.ui-datebox-collapse a { display: inline-block; width: 45% }
+.ui-datebox-inline { margin-top: 5px; border: 5px solid #111111 !important; margin-left: auto; margin-right: auto; text-align: center; }
+.ui-datebox-inlineblind { margin-top: 5px; border: 5px solid #111111 !important; margin-left: auto; margin-right: auto; text-align: center; }
+

@@ -1,0 +1,508 @@
+.w30p {width:30%;}
+/* -------------------------------------- jquery bgiframe ---------------------------*/
+.ol_loading {width: 100%; height:31px; background: url( 'image/icon/loading1.gif' ); background-repeat: no-repeat;
+	background-position: center center; display:none; position:absolute; top:40%; left:0px;}
+.ol_loading_mask{height:100%; width:100%; position:absolute; top:0px; left:0px; background-color: #fff;
+	opacity: 0.6; filter: alpha(opacity = 60); display:none;}
+/* -------------------------------------- jQuery File Upload ---------------------------*/
+.upload_btn {-moz-border-bottom-colors: none;-moz-border-image: none;-moz-border-left-colors: none; background-color: #5BB75B;
+    -moz-border-right-colors: none;-moz-border-top-colors: none;background-color: #F5F5F5;
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #E6E6E6);background-repeat: repeat-x;
+    border-color: #E6E6E6 #E6E6E6 #B3B3B3;border-radius: 4px 4px 4px 4px;border-style: solid;
+    border-width: 1px;box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #333333;cursor: pointer;display: inline-block;font-size: 13px;line-height: 18px;
+    margin-bottom: 0;padding: 4px 10px;text-align: center;text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    vertical-align: middle;}
+
+/*
+ * jQuery File Upload UI Plugin CSS 6.3
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2010, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+.fileinput-button {position: relative; overflow: hidden; float: left; margin-right: 4px;}
+.fileinput-button input {position: absolute; top: 0; right: 0; margin: 0; border: solid transparent;
+  border-width: 0 0 100px 200px; opacity: 0; filter: alpha(opacity=0); -moz-transform: translate(-300px, 0) scale(4);
+  direction: ltr; cursor: pointer;}
+.fileupload-buttonbar .btn,
+.fileupload-buttonbar .toggle {margin-bottom: 5px;}
+.files .progress {width: 200px;}
+.progress-animated .bar {background: url(image/jq/fileUpload/progressbar.gif) !important;filter: none;}
+.fileupload-loading {position: absolute;left: 50%;width: 128px;height: 128px;
+  background: url(image/jq/fileUpload/loading.gif) center no-repeat; display: none;}
+.fileupload-processing .fileupload-loading {display: block;}
+/* Fix for IE 6: */
+*html .fileinput-button {line-height: 22px; margin: 1px -3px 0 0;}
+/* Fix for IE 7: */
+*+html .fileinput-button {margin: 1px 0 0 0;}
+@media (max-width: 480px) {
+  .files .btn span {display: none;}
+  .files .preview * {width: 40px;}
+  .files .name * {width: 80px; display: inline-block; word-wrap: break-word;}
+  .files .progress {width: 20px;}
+  .files .delete {width: 60px;}
+}
+
+/*------------------------------------- zTree Style
+version:	3.3
+author:		Hunter.z
+email:		hunter.z@263.net
+website:	http://code.google.com/p/jquerytree/
+-------------------------------------*/
+.ztree * {padding:0; margin:0; font-size:12px; font-family: Verdana, Arial, Helvetica, AppleGothic, sans-serif}
+.ztree {margin:0; padding:5px; color:#333}
+.ztree li{padding:0; margin:0; list-style:none; line-height:14px; text-align:left; white-space:nowrap; outline:0}
+.ztree li ul{ margin:0; padding:0 0 0 18px}
+.ztree li ul.line{ background:url(image/jq/zTree/line_conn.gif) 0 0 repeat-y;}
+
+.ztree li a {padding:1px 3px 0 0; margin:0; cursor:pointer; height:17px; color:#333; background-color: transparent;
+	text-decoration:none; vertical-align:top; display: inline-block}
+.ztree li a:hover {text-decoration:underline}
+.ztree li a.curSelectedNode {padding-top:0px; background-color:#FFE6B0; color:black; height:16px; border:1px #FFB951 solid; opacity:0.8;}
+.ztree li a.curSelectedNode_Edit {padding-top:0px; background-color:#FFE6B0; color:black; height:16px; border:1px #FFB951 solid; opacity:0.8;}
+.ztree li a.tmpTargetNode_inner {padding-top:0px; background-color:#316AC5; color:white; height:16px; border:1px #316AC5 solid;
+	opacity:0.8; filter:alpha(opacity=80)}
+.ztree li a.tmpTargetNode_prev {}
+.ztree li a.tmpTargetNode_next {}
+.ztree li a input.rename {height:14px; width:80px; padding:0; margin:0;
+	font-size:12px; border:1px #7EC4CC solid; *border:0px}
+.ztree li span {line-height:16px; margin-right:2px}
+.ztree li span.button {line-height:0; margin:0; width:16px; height:16px; display: inline-block; vertical-align:middle;
+	border:0 none; cursor: pointer;outline:none;
+	background-color:transparent; background-repeat:no-repeat; background-attachment: scroll;
+	background-image:url("image/jq/zTree/zTreeStandard.png"); *background-image:url("image/jq/zTree/zTreeStandard.gif")}
+
+.ztree li span.button.chk {width:13px; height:13px; margin:0 3px 0 0; cursor: auto}
+.ztree li span.button.chk.checkbox_false_full {background-position:0 0}
+.ztree li span.button.chk.checkbox_false_full_focus {background-position:0 -14px}
+.ztree li span.button.chk.checkbox_false_part {background-position:0 -28px}
+.ztree li span.button.chk.checkbox_false_part_focus {background-position:0 -42px}
+.ztree li span.button.chk.checkbox_false_disable {background-position:0 -56px}
+.ztree li span.button.chk.checkbox_true_full {background-position:-14px 0}
+.ztree li span.button.chk.checkbox_true_full_focus {background-position:-14px -14px}
+.ztree li span.button.chk.checkbox_true_part {background-position:-14px -28px}
+.ztree li span.button.chk.checkbox_true_part_focus {background-position:-14px -42px}
+.ztree li span.button.chk.checkbox_true_disable {background-position:-14px -56px}
+.ztree li span.button.chk.radio_false_full {background-position:-28px 0}
+.ztree li span.button.chk.radio_false_full_focus {background-position:-28px -14px}
+.ztree li span.button.chk.radio_false_part {background-position:-28px -28px}
+.ztree li span.button.chk.radio_false_part_focus {background-position:-28px -42px}
+.ztree li span.button.chk.radio_false_disable {background-position:-28px -56px}
+.ztree li span.button.chk.radio_true_full {background-position:-42px 0}
+.ztree li span.button.chk.radio_true_full_focus {background-position:-42px -14px}
+.ztree li span.button.chk.radio_true_part {background-position:-42px -28px}
+.ztree li span.button.chk.radio_true_part_focus {background-position:-42px -42px}
+.ztree li span.button.chk.radio_true_disable {background-position:-42px -56px}
+
+.ztree li span.button.switch {width:18px; height:18px}
+.ztree li span.button.root_open{background-position:-92px -54px}
+.ztree li span.button.root_close{background-position:-74px -54px}
+.ztree li span.button.roots_open{background-position:-92px 0}
+.ztree li span.button.roots_close{background-position:-74px 0}
+.ztree li span.button.center_open{background-position:-92px -18px}
+.ztree li span.button.center_close{background-position:-74px -18px}
+.ztree li span.button.bottom_open{background-position:-92px -36px}
+.ztree li span.button.bottom_close{background-position:-74px -36px}
+.ztree li span.button.noline_open{background-position:-92px -72px}
+.ztree li span.button.noline_close{background-position:-74px -72px}
+.ztree li span.button.root_docu{ background:none;}
+.ztree li span.button.roots_docu{background-position:-56px 0}
+.ztree li span.button.center_docu{background-position:-56px -18px}
+.ztree li span.button.bottom_docu{background-position:-56px -36px}
+.ztree li span.button.noline_docu{ background:none;}
+
+.ztree li span.button.ico_open{margin-right:2px; background-position:-110px -16px; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.ico_close{margin-right:2px; background-position:-110px 0; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.ico_docu{margin-right:2px; background-position:-110px -32px; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.edit {margin-right:2px; background-position:-110px -48px; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.remove {margin-right:2px; background-position:-110px -64px; vertical-align:top; *vertical-align:middle}
+
+.ztree li span.button.ico_loading{margin-right:2px; background:url(image/jq/zTree/loading.gif) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+
+ul.tmpTargetzTree {background-color:#FFE6B0; opacity:0.8; filter:alpha(opacity=80)}
+
+span.tmpzTreeMove_arrow {width:16px; height:16px; display: inline-block; padding:0; margin:2px 0 0 1px; border:0 none; position:absolute;
+	background-color:transparent; background-repeat:no-repeat; background-attachment: scroll;
+	background-position:-110px -80px; background-image:url("image/jq/zTree/zTreeStandard.png"); *background-image:url("image/jq/zTree/zTreeStandard.gif")}
+
+ul.ztree.zTreeDragUL {margin:0; padding:0; position:absolute; width:auto; height:auto;overflow:hidden; background-color:#cfcfcf; border:1px #00B83F dotted; opacity:0.8; filter:alpha(opacity=80)}
+.zTreeMask {z-index:10000; background-color:#cfcfcf; opacity:0.0; filter:alpha(opacity=0); position:absolute}
+
+/* level style*/
+/*.ztree li span.button.level0 {
+	display:none;
+}
+.ztree li ul.level0 {
+	padding:0;
+	background:none;
+}*/
+
+/** -------------------------------------------------- validationEngine.jquery.css ---------------------------------*/
+/* Z-INDEX */
+.formError { z-index: 990; }
+.formError .formErrorContent { z-index: 991; }
+.formError .formErrorArrow { z-index: 996; }
+.formErrorInsideDialog.formError { z-index: 5000; }
+.formErrorInsideDialog.formError .formErrorContent { z-index: 5001; }
+.formErrorInsideDialog.formError .formErrorArrow { z-index: 5006; }
+.formErrorOuter{}
+.inputContainer{position: relative; float: left;}
+.formError {position: absolute; top: 300px; left: 300px; display: block; cursor: pointer;}
+.ajaxSubmit {padding: 20px; background: #55ea55; border: 1px solid #999; display: none}
+.formError .formErrorContent {width: 100%; background: #ee0101; position:relative; color: #fff;
+	width: 150px; font-size: 11px; border: 2px solid #ddd; box-shadow: 0 0 6px #000; -moz-box-shadow: 0 0 6px #000;
+	-webkit-box-shadow: 0 0 6px #000; padding: 4px 10px 4px 10px; border-radius: 6px; -moz-border-radius: 6px;
+	-webkit-border-radius: 6px;}
+.greenPopup .formErrorContent {background: #33be40;}
+.blackPopup .formErrorContent {background: #393939; color: #FFF;}
+.formError .formErrorArrow {width: 15px; margin: -2px 0 0 13px; position:relative;}
+body[dir='rtl'] .formError .formErrorArrow, body.rtl .formError .formErrorArrow {margin: -2px 13px 0 0;}
+.formError .formErrorArrowBottom {box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; margin: 0px 0 0 12px;
+	top:2px;}
+.formError .formErrorArrow div {border-left: 2px solid #ddd; border-right: 2px solid #ddd;
+	box-shadow: 0 2px 3px #444; -moz-box-shadow: 0 2px 3px #444; -webkit-box-shadow: 0 2px 3px #444;
+	font-size: 0px; height: 1px; background: #ee0101; margin: 0 auto; line-height: 0; font-size: 0; display: block;}
+.formError .formErrorArrowBottom div {box-shadow: none;-moz-box-shadow: none; -webkit-box-shadow: none;}
+.greenPopup .formErrorArrow div {background: #33be40;}
+.blackPopup .formErrorArrow div {background: #393939;color: #FFF;}
+.formError .formErrorArrow .line10 {width: 15px; border: none;}
+.formError .formErrorArrow .line9 {width: 13px;border: none;}
+.formError .formErrorArrow .line8 {width: 11px;}
+.formError .formErrorArrow .line7 {width: 9px;}
+.formError .formErrorArrow .line6 {width: 7px;}
+.formError .formErrorArrow .line5 {width: 5px;}
+.formError .formErrorArrow .line4 {width: 3px;}
+.formError .formErrorArrow .line3 {width: 1px; border-left: 2px solid #ddd; border-right: 2px solid #ddd;
+	border-bottom: 0 solid #ddd;}
+.formError .formErrorArrow .line2 {width: 3px; border: none; background: #ddd;}
+.formError .formErrorArrow .line1 {width: 1px; border: none; background: #ddd;}
+
+/** -------------------------------------------------- nbspslider.css ---------------------------------*/
+.nbspslider div { margin-left:auto; margin-right:auto;}
+.nbspslider ul { margin:0; padding:0;}li { list-style:none; margin:0; padding:0;}
+/*=================幻灯片样式===================*/
+.sliderBtn { background:url("image/jq/nbspslider/sprite.png") no-repeat; cursor: pointer; height: 100px; position:relative; top:30%; z-index:100; width:45px;}
+#prevBtn { left:0; float:left;}
+#nextBtn { background-position:right top; right:0; float:right;}
+#prevBtns { background:url("image/jq/nbspslider/arrows.png") no-repeat; cursor: pointer; height:68px; position:relative; top:35%; z-index:100; width:33px; left:0; float:left;}
+#nextBtns { background:url("image/jq/nbspslider/arrows.png") 0 -141px no-repeat; cursor: pointer; height:68px; position:relative; top:35%; z-index:100; width:33px; right:0; float:right;}
+#btnList { height:25px; position:absolute; bottom:5px; padding:0 10px 0 10px;}
+/*===============数字按钮默认样式================*/
+.num { width:22px; height:22px; line-height:25px; text-align:center; cursor:pointer; margin-left:10px; background:#90EE90; float:right; border:1px solid #ccc; overflow:hidden;}
+.num_act { width:22px; height:22px; line-height:25px; text-align:center; cursor:pointer; margin-left:10px; background:#EEB422;float:right; border:1px solid #ccc; overflow:hidden;}
+.num_hover { width:22px; height:22px; line-height:25px; text-align:center; cursor:pointer; margin-left:10px; background:#FFAEB9;float:right; border:1px solid #ccc; overflow:hidden;}
+/*=====================↓↓↓幻灯片数字按钮扩展↓↓↓==================*/
+/* square */
+.square { width:11px; height:11px; float:right; background:#999; cursor:pointer; margin-right:5px; overflow:hidden;}
+.square_act { width:11px; height:11px; float:right; background:#ADD8E6; cursor:pointer; margin-right:5px; overflow:hidden;}
+.square_hover { width:11px; height:11px; float:right; background:blue; cursor:pointer; margin-right:5px; overflow:hidden;}
+/* circle */
+.circle { width:12px; height:13px; float:right; background:url(image/jq/nbspslider/circle.png) 0 0 no-repeat; cursor:pointer; margin-right:5px; overflow:hidden;}
+.circle_act { width:13px; height:13px; float:right; background:url(image/jq/nbspslider/circle.png) 0 -13px no-repeat; cursor:pointer; margin-right:5px; overflow:hidden;}
+.circle_hover { width:13px; height:13px; float:right; background:url(image/jq/nbspslider/circle.png) 0 -26px no-repeat; cursor:pointer; margin-right:5px; overflow:hidden;}
+/* roundness */
+.roundness { width:12px; height:12px; float:right; background:url(image/jq/nbspslider/roundness.png) no-repeat; cursor:pointer; margin-right:5px; overflow:hidden;}
+.roundness_act { width:13px; height:13px; float:right; background:url(image/jq/nbspslider/roundness.png) 0 -12px no-repeat; cursor:pointer; margin-right:5px; overflow:hidden;}
+.roundness_hover { width:13px; height:13px; float:right; background:url(image/jq/nbspslider/roundness.png) 0 -24px no-repeat; cursor:pointer; margin-right:5px; overflow:hidden;}
+/* rectangle */
+.rectangle { width:25px; height:10px; float:right; background:#D15FEE; cursor:pointer; margin-right:5px; opacity:0.7; overflow:hidden;}
+.rectangle_act { width:25px; height:10px; float:right; background:#CDCD00; cursor:pointer; margin-right:5px; overflow:hidden;}
+.rectangle_hover { width:25px; height:10px; float:right; background:blue; cursor:pointer; margin-right:5px; overflow:hidden;}
+
+/** -------------------------------------------------- mergingImageBoxes.css ---------------------------------*/
+.im_wrapper div{left:-500px; width:125px; height:125px; position:absolute; background-repeat:no-repeat;
+	background-color:#fff; cursor:pointer; -moz-box-shadow:1px 1px 3px #000; -webkit-box-shadow:1px 1px 3px #000;
+	box-shadow:1px 1px 3px #000;}
+.im_wrapper div img{float:left;width:115px;height:115px;margin:5px 0px 0px 5px;}
+.im_loading{display:none;position:fixed;top:50%;left:50%;margin:-35px 0px 0px -35px;
+	background:#fff url(image/jq/mergingImageBoxes/loader.gif) no-repeat center center;
+	width:70px;height:70px;z-index:9999;-moz-border-radius:10px;-webkit-border-radius:10px;
+	border-radius:10px;-moz-box-shadow:1px 1px 3px #000;-webkit-box-shadow:1px 1px 3px #000;
+	box-shadow:1px 1px 3px #000;opacity:0.7;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);}
+.im_next,.im_prev{width:50px;height:50px;position:fixed;bottom:50%;margin-top:-25px;cursor:pointer;
+	opacity:0.7;z-index:1000;-moz-box-shadow:0px 0px 3px #000;-webkit-box-shadow:0px 0px 3px #000;
+	box-shadow:0px 0px 3px #000;-moz-border-radius:2px;-webkit-border-radius:2px;
+	border-radius:2px;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);}
+.im_next:hover,.im_prev:hover {opacity:0.9;}
+.im_next{background:#fff url(image/jq/mergingImageBoxes/next.png) no-repeat center center;right:-50px; /*10 to show*/}
+.im_prev{background:#fff url(image/jq/mergingImageBoxes/prev.png) no-repeat center center;left:-50px; /*10 to show*/}
+
+/** -------------------------------------------------- placeholder.css ---------------------------------*/
+.placeholder { color: #666; }
+.placeholderFocus { color: #000; }
+
+/** -------------------------------------------------- Jqplot -----------------------------------------*/
+/*rules for the plot target div.  These will be cascaded down to all plot elements according to css rules*/
+.jqplot-target {
+    position: relative;
+    color: #666666;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 1em;
+/*    height: 300px;
+    width: 400px;*/
+}
+
+/*rules applied to all axes*/
+.jqplot-axis {
+    font-size: 0.75em;
+}
+
+.jqplot-xaxis {
+    margin-top: 10px;
+}
+
+.jqplot-x2axis {
+    margin-bottom: 10px;
+}
+
+.jqplot-yaxis {
+    margin-right: 10px;
+}
+
+.jqplot-y2axis, .jqplot-y3axis, .jqplot-y4axis, .jqplot-y5axis, .jqplot-y6axis, .jqplot-y7axis, .jqplot-y8axis, .jqplot-y9axis, .jqplot-yMidAxis {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*rules applied to all axis tick divs*/
+.jqplot-axis-tick, .jqplot-xaxis-tick, .jqplot-yaxis-tick, .jqplot-x2axis-tick, .jqplot-y2axis-tick, .jqplot-y3axis-tick, .jqplot-y4axis-tick, .jqplot-y5axis-tick, .jqplot-y6axis-tick, .jqplot-y7axis-tick, .jqplot-y8axis-tick, .jqplot-y9axis-tick, .jqplot-yMidAxis-tick {
+    position: absolute;
+    white-space: pre;
+}
+
+
+.jqplot-xaxis-tick {
+    top: 0px;
+    /* initial position untill tick is drawn in proper place */
+    left: 15px;
+/*    padding-top: 10px;*/
+    vertical-align: top;
+}
+
+.jqplot-x2axis-tick {
+    bottom: 0px;
+    /* initial position untill tick is drawn in proper place */
+    left: 15px;
+/*    padding-bottom: 10px;*/
+    vertical-align: bottom;
+}
+
+.jqplot-yaxis-tick {
+    right: 0px;
+    /* initial position untill tick is drawn in proper place */
+    top: 15px;
+/*    padding-right: 10px;*/
+    text-align: right;
+}
+
+.jqplot-yaxis-tick.jqplot-breakTick {
+	right: -20px;
+	margin-right: 0px;
+	padding:1px 5px 1px 5px;
+/*	background-color: white;*/
+	z-index: 2;
+	font-size: 1.5em;
+}
+
+.jqplot-y2axis-tick, .jqplot-y3axis-tick, .jqplot-y4axis-tick, .jqplot-y5axis-tick, .jqplot-y6axis-tick, .jqplot-y7axis-tick, .jqplot-y8axis-tick, .jqplot-y9axis-tick {
+    left: 0px;
+    /* initial position untill tick is drawn in proper place */
+    top: 15px;
+/*    padding-left: 10px;*/
+/*    padding-right: 15px;*/
+    text-align: left;
+}
+
+.jqplot-yMidAxis-tick {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.jqplot-xaxis-label {
+    margin-top: 10px;
+    font-size: 11pt;
+    position: absolute;
+}
+
+.jqplot-x2axis-label {
+    margin-bottom: 10px;
+    font-size: 11pt;
+    position: absolute;
+}
+
+.jqplot-yaxis-label {
+    margin-right: 10px;
+/*    text-align: center;*/
+    font-size: 11pt;
+    position: absolute;
+}
+
+.jqplot-yMidAxis-label {
+    font-size: 11pt;
+    position: absolute;
+}
+
+.jqplot-y2axis-label, .jqplot-y3axis-label, .jqplot-y4axis-label, .jqplot-y5axis-label, .jqplot-y6axis-label, .jqplot-y7axis-label, .jqplot-y8axis-label, .jqplot-y9axis-label {
+/*    text-align: center;*/
+    font-size: 11pt;
+    margin-left: 10px;
+    position: absolute;
+}
+
+.jqplot-meterGauge-tick {
+    font-size: 0.75em;
+    color: #999999;
+}
+
+.jqplot-meterGauge-label {
+    font-size: 1em;
+    color: #999999;
+}
+
+table.jqplot-table-legend {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+table.jqplot-table-legend, table.jqplot-cursor-legend {
+    background-color: rgba(255,255,255,0.6);
+    border: 1px solid #cccccc;
+    position: absolute;
+    font-size: 0.75em;
+}
+
+td.jqplot-table-legend {
+    vertical-align:middle;
+}
+
+/*
+These rules could be used instead of assigning
+element styles and relying on js object properties.
+*/
+
+/*
+td.jqplot-table-legend-swatch {
+    padding-top: 0.5em;
+    text-align: center;
+}
+
+tr.jqplot-table-legend:first td.jqplot-table-legend-swatch {
+    padding-top: 0px;
+}
+*/
+
+td.jqplot-seriesToggle:hover, td.jqplot-seriesToggle:active {
+    cursor: pointer;
+}
+
+.jqplot-table-legend .jqplot-series-hidden {
+    text-decoration: line-through;
+}
+
+div.jqplot-table-legend-swatch-outline {
+    border: 1px solid #cccccc;
+    padding:1px;
+}
+
+div.jqplot-table-legend-swatch {
+    width:0px;
+    height:0px;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 6px;
+    border-right-width: 6px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+}
+
+.jqplot-title {
+    top: 0px;
+    left: 0px;
+    padding-bottom: 0.5em;
+    font-size: 1.2em;
+}
+
+table.jqplot-cursor-tooltip {
+    border: 1px solid #cccccc;
+    font-size: 0.75em;
+}
+
+
+.jqplot-cursor-tooltip {
+    border: 1px solid #cccccc;
+    font-size: 0.75em;
+    white-space: nowrap;
+    background: rgba(208,208,208,0.5);
+    padding: 1px;
+}
+
+.jqplot-highlighter-tooltip, .jqplot-canvasOverlay-tooltip {
+    border: 1px solid #cccccc;
+    font-size: 0.75em;
+    white-space: nowrap;
+    background: rgba(208,208,208,0.5);
+    padding: 1px;
+}
+
+.jqplot-point-label {
+    font-size: 0.75em;
+    z-index: 2;
+}
+      
+td.jqplot-cursor-legend-swatch {
+    vertical-align: middle;
+    text-align: center;
+}
+
+div.jqplot-cursor-legend-swatch {
+    width: 1.2em;
+    height: 0.7em;
+}
+
+.jqplot-error {
+/*   Styles added to the plot target container when there is an error go here.*/
+    text-align: center;
+}
+
+.jqplot-error-message {
+/*    Styling of the custom error message div goes here.*/
+    position: relative;
+    top: 46%;
+    display: inline-block;
+}
+
+div.jqplot-bubble-label {
+    font-size: 0.8em;
+/*    background: rgba(90%, 90%, 90%, 0.15);*/
+    padding-left: 2px;
+    padding-right: 2px;
+    color: rgb(20%, 20%, 20%);
+}
+
+div.jqplot-bubble-label.jqplot-bubble-label-highlight {
+    background: rgba(90%, 90%, 90%, 0.7);
+}
+
+div.jqplot-noData-container {
+	text-align: center;
+	background-color: rgba(96%, 96%, 96%, 0.3);
+}
+
+
+/*------------------------------- POPUP.CSS -------------------------------*/
+.popup_back { height: 100%; left: 0; position: fixed; top: 0; width: 100%; z-index: 100;}
+.popup_cont {position: fixed; z-index: 102;}
+.preloader {z-index: 101;}
+.popup_close {color: #888; cursor: pointer; position: absolute; padding: 5px; right: 5px; top: 0;}
+.popup_close:hover {color: #111;}
+.popup_back {cursor: pointer; background-color: #222;}
+div.popup {background: #fff; padding: 20px; box-shadow: 0 3px 10px #222;}
+.preloader {left: 50%; margin: -10px 0 0 -25px; position: fixed; top: 50%;}
