@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Magnific Popup</title>
+
+  <!-- Meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="GanJianping"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <!-- Magnific Popup core CSS file -->
+  <link rel="stylesheet" href="css/magnific-popup.css"> 
+
+   <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+   <script src="js/jquery1.9.1.js"></script> 
+
+   <!-- Magnific Popup core JS file -->
+    <script src="js/jquery.magnific-popup.js"></script> 
+  
+  <style type="text/css">
+  	#open-popup {padding:20px}
+	.white-popup {
+	  position: relative;
+	  background: #FFF;
+	  padding: 40px;
+	  width: auto;
+	  max-width: 200px;
+	  margin: 20px auto;
+	  text-align: center;
+	}
+  </style>
+</head>
+<body>
+  <a class="test-popup-link" href="image/Taylor-swift-01.jpg">
+   <img alt="" src="image/Taylor-swift-01.jpg" style="height:200px;">
+  </a>
+  
+  <div class="parent-container">
+    <a href="image/Taylor-swift-01.jpg"><img alt="" src="image/Taylor-swift-01.jpg" style="height:200px;"></a>
+    <a href="image/Taylor-swift-02.jpg"><img alt="" src="image/Taylor-swift-02.jpg" style="height:200px;"></a>
+    <a href="image/Taylor-swift-03.jpg"><img alt="" src="image/Taylor-swift-03.jpg" style="height:200px;"></a>
+  </div>
+  
+  <button id="open-popup">Open popup</button>
+  <div id="my-popup" class="mfp-hide white-popup">
+	  My inline popup
+  </div>
+</body>
+</html>
+<script>
+<!--
+$(function() {
+  $('.test-popup-link').magnificPopup({ 
+	type: 'image'
+  });
+  
+  $('.parent-container').magnificPopup({
+    delegate: 'a', // child items selector, by clicking on it popup will open
+    type: 'image',
+    gallery: {
+      enabled: true
+    }
+  });
+  
+  $('#open-popup').magnificPopup({
+    items: [
+	      {
+	        src: 'http://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Peter_%26_Paul_fortress_in_SPB_03.jpg/800px-Peter_%26_Paul_fortress_in_SPB_03.jpg',
+	        title: 'Peter & Paul fortress in SPB'
+	      },
+	      {
+	        src: 'http://vimeo.com/123123',
+	        type: 'iframe' // this overrides default type
+	      },
+	      {
+	        src: $('<div class="white-popup">Dynamically created element</div>'), // Dynamically created element
+	        type: 'inline'
+	      },
+	      {
+	        src: '<div class="white-popup">Popup from HTML string</div>', // HTML string
+	        type: 'inline'
+	      },
+	      {
+	        src: '#my-popup', // CSS selector of an element on page that should be used as a popup
+	        type: 'inline'
+	      }
+	    ],
+	    gallery: {
+	      enabled: true
+	    },
+	    type: 'image' // this is a default type
+  });
+});
+//-->
+</script>

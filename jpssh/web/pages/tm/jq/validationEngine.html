@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ValidationEngine Test Page</title>
+    <link rel="stylesheet"  href="../../../resources/style/default/jpw.jq.css" />
+    <script src="../../../resources/js/jquery/jquery.js"></script>
+    <script src="../../../resources/js/jquery/i18n/jquery_zh_CN.js"></script>
+    <script src="../../../resources/js/jquery/plugin/jquery.validationEngine.js"></script>
+</head> 
+<body> 
+<a href="#" onclick="alert('is the form valid? '+jQuery('#formID').validationEngine('validate'))">Evaluate form</a>
+<form id="formID" class="formular" method="post">
+  <fieldset>
+	<legend>Required!</legend>
+	<label>
+	  <span>Field is required : </span>
+	  <input value="" class="validate[required] text-input" type="text" name="req" id="req" />
+	</label>
+	<legend>Placeholder & required</legend>
+	<label>
+      <span>Field is required : </span>
+	  <input value="This is a placeholder" data-validation-placeholder="This is a placeholder" class="validate[required] text-input" type="text" name="reqplaceholder" id="reqplaceholder" />
+	</label>
+	<label>
+	  <span>Favorite sport 1:</span>
+	  <select name="sport" id="sport" class="validate[required]">
+		<option value="">Choose a sport</option>
+		<option value="option1">Tennis</option>
+		<option value="option2">Football</option>
+		<option value="option3">Golf</option>
+	  </select>
+	</label>
+	<label>
+	  <span>Favorite sport 2:</span>
+	  <select name="sport2" id="sport2" multiple class="validate[required]">
+	    <option value="">Choose a sport</option>
+		<option value="option1">Tennis</option>
+		<option value="option2">Football</option>
+		<option value="option3">Golf</option>
+	  </select>
+	</label>
+	<br/>
+	validate[required]
+  </fieldset>
+  <fieldset>
+	<legend>Custom</legend>
+	<label>
+	  <p>Comes with many predifined regex (phone, url, ip, email..etc)</p>
+	  <a href="demoRegExp.html">[DEMO]</a>
+	  <br/>
+	  <span>Enter a URL : </span>
+	  <input value="http://" class="validate[required,custom[url]] text-input" type="text" name="url" id="url" />
+	  <br/>
+	  validate[required,custom[url]]
+	</label>
+  </fieldset>
+</form>
+
+</body>
+</html>
+<script type="text/javascript">
+<!--
+$(document).ready(function() {
+ $("#formID").validationEngine();
+});
+ 
+//-->
+</script>

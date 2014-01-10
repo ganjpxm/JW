@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>jQuery.Shapeshift</title>
+
+  <!-- Meta -->
+  <meta charset="UTF-8">
+  <meta name="description" content="jQuery plugin which creates a column based grid system that allows drag and drop even between multiple containers.">
+  <meta name="keywords" content="jquery,html,grid,column,drag,drop,pinterest">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="template_assets/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="template_assets/bootstrap/bootstrap-responsive.min.css" />
+  <link rel="stylesheet" href="template_assets/bootstrap/bootstrap-switch.css" />
+  <link rel="stylesheet" href="template_assets/stylesheets/template.css" />
+  <link rel="stylesheet" href="template_assets/stylesheets/shame.css" />
+  
+  <!-- Javascripts -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+  <script src="template_assets/bootstrap/bootstrap.min.js"></script>
+  <script src="template_assets/bootstrap/bootstrap-switch.js"></script>
+  <script src="template_assets/javascripts/template.js"></script>
+
+  <!-- Core Shapeshift Files -->
+  <script type="text/JavaScript" src="demo_assets/jquery.touch-punch.min.js"></script>
+  <script type="text/JavaScript" src="demo_assets/jquery.shapeshift.min.js"></script>
+
+  <!-- Demo Files -->
+  <script src="demo_assets/index.js"></script>
+  <style type="text/css">
+  	ul.ss-container {
+	  outline: 1px dashed rgba(0,0,0,0.25);
+	  float: left;
+	  margin: 1%;
+	  position: relative;
+	  width: 98%;
+	}
+	
+	ul.ss-container li {
+	  background: rgba(0,0,0,0.15);
+	  border-radius: 3px;
+	  border: 1px solid rgba(0,0,0,0.4);
+	  position: absolute;
+	  width: 70px;
+	}
+	
+	ul.ss-container li.ss-dragged-child {
+	  cursor: move;
+	  z-index: 9999;
+	  opacity: .7;
+	  transform:rotate(2deg);
+	  -ms-transform:rotate(2deg); /* IE 9 */
+	  -moz-transform:rotate(2deg); /* Firefox */
+	  -webkit-transform:rotate(2deg); /* Safari and Chrome */
+	  -o-transform:rotate(2deg); /* Opera */
+	}
+	
+	ul.ss-container li.ss-placeholder-child {
+	  background: transparent;
+	  border: 0px;
+	  outline: 1px dashed #68C;
+	}
+  </style>
+</head>
+<body>
+  <!-- content -->
+  <ul class="ss-container unstyled shapeshifted_container_05gdkne9udi ui-droppable">
+  <li class="ss-active-child">
+  	<div>
+  		<div><img src="https://lh3.googleusercontent.com/-D81Il22zk0o/UJ_VuFpHg6I/AAAAAAAAAS0/bcxusCiRdXc/w246-h370-p-o/Elize_9.jpg" width="100%" style="margin-bottom:0px;"/></div>
+  	</div>
+  </li>
+  <li class="ss-active-child" data-ss-colspan="1" style="height: 146px; background-image: url(&quot;http://fpoimg.com/70x146?bg_color=CCDBBA&amp;text_color=444444&quot;); 
+  	left: 124px; top: 10px;">
+  	<div style="display: none;" class="position">
+  		<div><img src="https://lh3.googleusercontent.com/--rPOABL3_Cs/UJ_VuhAVsUI/AAAAAAAAAS8/Jnd2KCzCnq4/w494-h370-p-o/Elize_1.jpg" width="100%" style="margin-bottom:0px;"/></div>
+  	</div>
+  </li>
+  <li class="ss-active-child" data-ss-colspan="1" style="height: 147px; background-image: url(&quot;http://fpoimg.com/70x147?bg_color=EECEDB&amp;text_color=444444&quot;); 
+  	left: 206px; top: 10px;">
+  	<div style="display: none;" class="position">
+  		<div><img src="https://lh3.googleusercontent.com/-D81Il22zk0o/UJ_VuFpHg6I/AAAAAAAAAS0/bcxusCiRdXc/w246-h370-p-o/Elize_9.jpg" width="100%" style="margin-bottom:0px;"/></div>
+  	</div>
+  </li>
+  <li class="ss-active-child" data-ss-colspan="1" style="height: 110px; background-image: url(&quot;http://fpoimg.com/70x110?bg_color=ECBCEB&amp;text_color=444444&quot;); 
+  	left: 288px; top: 10px;"><div style="display: none;" class="position"><div>3</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 111px; background-image: url(&quot;http://fpoimg.com/70x111?bg_color=AFACBD&amp;text_color=444444&quot;); left: 370px; top: 10px;"><div style="display: none;" class="position"><div>4</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 185px; background-image: url(&quot;http://fpoimg.com/70x185?bg_color=EBEFBC&amp;text_color=444444&quot;); left: 452px; top: 10px;"><div style="display: none;" class="position"><div>5</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 110px; background-image: url(&quot;http://fpoimg.com/70x110?bg_color=DFFBCA&amp;text_color=444444&quot;); left: 534px; top: 10px;"><div style="display: none;" class="position"><div>6</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 113px; background-image: url(&quot;http://fpoimg.com/70x113?bg_color=ABCBBB&amp;text_color=444444&quot;); left: 288px; top: 132px;"><div style="display: none;" class="position"><div>7</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 195px; background-image: url(&quot;http://fpoimg.com/70x195?bg_color=ECDDDA&amp;text_color=444444&quot;); left: 534px; top: 132px;"><div style="display: none;" class="position"><div>8</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 147px; background-image: url(&quot;http://fpoimg.com/70x147?bg_color=BBBABD&amp;text_color=444444&quot;); left: 370px; top: 133px;"><div style="display: none;" class="position"><div>9</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 179px; background-image: url(&quot;http://fpoimg.com/70x179?bg_color=EECADF&amp;text_color=444444&quot;); left: 124px; top: 168px;"><div style="display: none;" class="position"><div>10</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 163px; background-image: url(&quot;http://fpoimg.com/70x163?bg_color=EEBADC&amp;text_color=444444&quot;); left: 206px; top: 169px;"><div style="display: none;" class="position"><div>11</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 153px; background-image: url(&quot;http://fpoimg.com/70x153?bg_color=BADDAE&amp;text_color=444444&quot;); left: 452px; top: 207px;"><div style="display: none;" class="position"><div>12</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 144px; background-image: url(&quot;http://fpoimg.com/70x144?bg_color=ECBEBC&amp;text_color=444444&quot;); left: 42px; top: 210px;"><div style="display: none;" class="position"><div>13</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 180px; background-image: url(&quot;http://fpoimg.com/70x180?bg_color=EFEDBD&amp;text_color=444444&quot;); left: 288px; top: 257px;"><div style="display: none;" class="position"><div>14</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 144px; background-image: url(&quot;http://fpoimg.com/70x144?bg_color=EDADEA&amp;text_color=444444&quot;); left: 370px; top: 292px;"><div style="display: none;" class="position"><div>15</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 137px; background-image: url(&quot;http://fpoimg.com/70x137?bg_color=ACCBFB&amp;text_color=444444&quot;); left: 534px; top: 339px;"><div style="display: none;" class="position"><div>16</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 161px; background-image: url(&quot;http://fpoimg.com/70x161?bg_color=DCADDD&amp;text_color=444444&quot;); left: 206px; top: 344px;"><div style="display: none;" class="position"><div>17</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 148px; background-image: url(&quot;http://fpoimg.com/70x148?bg_color=DBEBDA&amp;text_color=444444&quot;); left: 124px; top: 359px;"><div style="display: none;" class="position"><div>18</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 187px; background-image: url(&quot;http://fpoimg.com/70x187?bg_color=CFCCDA&amp;text_color=444444&quot;); left: 42px; top: 366px;"><div style="display: none;" class="position"><div>19</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 177px; background-image: url(&quot;http://fpoimg.com/70x177?bg_color=ECDEDB&amp;text_color=444444&quot;); left: 452px; top: 372px;"><div style="display: none;" class="position"><div>20</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 180px; background-image: url(&quot;http://fpoimg.com/70x180?bg_color=DAEABE&amp;text_color=444444&quot;); left: 370px; top: 448px;"><div style="display: none;" class="position"><div>21</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 102px; background-image: url(&quot;http://fpoimg.com/70x102?bg_color=CECBED&amp;text_color=444444&quot;); left: 288px; top: 449px;"><div style="display: none;" class="position"><div>22</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 157px; background-image: url(&quot;http://fpoimg.com/70x157?bg_color=FDCEAD&amp;text_color=444444&quot;); left: 534px; top: 488px;"><div style="display: none;" class="position"><div>23</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 138px; background-image: url(&quot;http://fpoimg.com/70x138?bg_color=BBEFDB&amp;text_color=444444&quot;); left: 206px; top: 517px;"><div style="display: none;" class="position"><div>24</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 145px; background-image: url(&quot;http://fpoimg.com/70x145?bg_color=DFBAAC&amp;text_color=444444&quot;); left: 124px; top: 519px;"><div style="display: none;" class="position"><div>25</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 148px; background-image: url(&quot;http://fpoimg.com/70x148?bg_color=BEBBDC&amp;text_color=444444&quot;); left: 452px; top: 561px;"><div style="display: none;" class="position"><div>26</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 136px; background-image: url(&quot;http://fpoimg.com/70x136?bg_color=CDDBBD&amp;text_color=444444&quot;); left: 288px; top: 563px;"><div style="display: none;" class="position"><div>27</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 180px; background-image: url(&quot;http://fpoimg.com/70x180?bg_color=CACBCC&amp;text_color=444444&quot;); left: 42px; top: 565px;"><div style="display: none;" class="position"><div>28</div></div></li><li class="ss-active-child" data-ss-colspan="1" style="height: 199px; background-image: url(&quot;http://fpoimg.com/70x199?bg_color=ACEFDF&amp;text_color=444444&quot;); left: 370px; top: 640px;"><div style="display: none;" class="position"><div>29</div></div></li>
+  </ul>		
+  		
+  		
+  <div class="clearfix"></div>
+  
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36383129-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</body>
+</html>

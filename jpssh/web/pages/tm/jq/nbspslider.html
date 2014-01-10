@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>jQuery nbsp slider Plugin Demo</title>
+  <link rel="stylesheet"  href="../../../resources/style/default/jpw.jq.css" />
+  <script src="../../../resources/js/jquery/jquery.js"></script>
+  <script src="../../../resources/js/jquery/plugin/jquery.nbspSlider.js"></script>
+</head>
+
+<body>
+
+<h2>Demo1横向切换模式</h2>
+  <div id="slider1">
+	<ul>				
+	  <li><a href="javascript:void(0);"><img src="images/nbspslider/01.jpg" alt="1111111111" /></a></li>
+	  <li><a href="javascript:void(0);"><img src="images/nbspslider/02.jpg" alt="22222222222" /></a></li>
+	  <li><a href="javascript:void(0);"><img src="images/nbspslider/03.jpg" alt="333333333333" /></a></li>
+	  <li><a href="javascript:void(0);"><img src="images/nbspslider/04.jpg" alt="444444444444" /></a></li>
+	  <li><a href="javascript:void(0);"><img src="images/nbspslider/05.jpg" alt="555555555555" /></a></li>			
+	</ul>
+  </div>
+</body>
+</html>
+<script type="text/javascript">
+$(document).ready(function(){
+  var widths = $(window).width()*0.8;
+  if (widths<640) widths = $(window).width()*0.95; 
+  $("#slider1").nbspSlider({
+	  widths: widths,
+	  heights : widths*0.25 ,        // 幻灯片高度
+	  autoplay : 1,  //0,1
+	  delays : 4000, 
+	  effect : "vertical", //fade,horizontal,none,vertical
+	  speeds : 800,
+	  prevId : 'prevBtns',      // 上一张幻灯片按钮ID
+	  nextId : 'nextBtns',      // 下一张幻灯片按钮ID
+	  altOpa:          0.5,            // ALT区块透明度
+	  altBgColor:      '#ccc',  		// ALT区块背景颜色
+	  altHeight:       '40px',  		// ALT区块高度
+	  altShow:         1,				// ALT区块是否显示(1为是0为否)
+	  altFontColor:    'blue',        // ALT区块内的字体颜色
+	  btnFontColor:    'red',        // 数字按钮的数字颜色
+	  btnBorderColor:  '#ccc',        // 数字按钮边框颜色
+	  btnBgColor:      'yellow',		// 数字按钮背景颜色
+	  btnActBgColor:   'green',		// 数字按钮选中的背景
+	  starEndNoEff : 0,            // 开始与结束中间无动画效果(1为是0为否)
+	  preNexBtnShow : 1,            // 是否显示上一张下一张按钮
+	  numBtnSty : "square",        // num、square、circle、roundness、rectangle == 数字、正方形、圆圈、圆形、长方形
+	  numBtnShow : "1",          // 是否显示数字按钮(1为是0为否)
+	  starEndNoEff: 1
+  });
+});
+</script>
