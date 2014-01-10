@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-//@RequestMapping("/test")
+@RequestMapping("/test")
 public class TmTypeController extends BaseController {
 
 	@RequestMapping(value = "/tmType", method = RequestMethod.POST)
@@ -42,6 +42,20 @@ public class TmTypeController extends BaseController {
 	public String showTmTypeMix(ModelMap mm) {
 		mm.addAttribute("key", getTmTypes());
 		return "tm/tmType";
+	}
+	
+	/**
+	 * <p>format=html|json|xml</p>
+	 * 
+	 * @param mm
+	 * @return
+	 */
+	@RequestMapping(value = "/json")
+	public @ResponseBody Map<String,Object> getJson() {
+		Map<String,Object> map = new HashMap<String,Object>();
+		map.put("ResultCode", 0);
+		map.put("Record", getTmTypes());
+		return map;
 	}
 	
 	@RequestMapping(value = "/excel")
@@ -72,13 +86,13 @@ public class TmTypeController extends BaseController {
 		Calendar calendar = new GregorianCalendar();
 		List<TmType> tmTypeList = new ArrayList<TmType>();
 		TmType tmType1 = new TmType();
-		tmType1.setStrType("gan");
-		calendar.set(1984, 2, 21);
+		tmType1.setStrType("JWeb iOS 1");
+		calendar.set(2013, 10, 20);
 		tmType1.setDateType(calendar.getTime());
 		
 		TmType tmType2 = new TmType();
-		tmType2.setStrType("jianping");
-		calendar.set(1984, 9, 12);
+		tmType2.setStrType("JWeb iOS 2");
+		calendar.set(2013, 10, 21);
 		tmType2.setDateType(calendar.getTime());
 		tmTypeList.add(tmType1);
 		tmTypeList.add(tmType2);

@@ -30,6 +30,9 @@ public class JpInteceptor implements HandlerInterceptor {
 		if (user!=null && StringUtil.isNotEmpty(request.getParameter("changeLange"))) {
         	session.setAttribute(Const.LANGUAGE, request.getParameter("changeLange"));
         }
+		if (url.indexOf("/test/")!=-1) {
+			return true;
+		}
 		if (url.indexOf("/mobile")!=-1) {
 			if (user == null) {
 				response.sendRedirect(contextPath + "/vtwo/sessionTimeout");
